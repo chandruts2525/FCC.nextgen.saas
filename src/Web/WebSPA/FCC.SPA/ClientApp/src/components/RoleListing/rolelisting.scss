@@ -1,0 +1,25 @@
+@import "../../commonStyles.scss";
+
+.role-listing-container {
+  .top-section {
+    min-height: 32px;
+  }
+  .add-role-btn-block {
+    text-align: right;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+  }
+  .text-center {
+    text-align: center;
+  }
+}
+.rolelisting_grid {
+    table {
+        th:nth-child(2), td:nth-of-type(2) {
+            @include mobiledevices {
+                width: 150px;
+            }
+        }
+    }
+}

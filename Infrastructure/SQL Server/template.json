@@ -1,0 +1,47 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+		"Sqlserver_name" :{
+			 "type": "String"
+		},
+		"Sqlserver_administratorLogin" :{
+			 "type": "String"
+		},
+		"Sqlserver_administratorLoginPassword" :{
+			 "type": "String"
+		},
+		"Sqlserver_Databasename" :{
+			 "type": "String"
+		},
+		"Sqlserver_skuname" :{
+			 "type": "String"
+		},
+		"Sqlserver_skutier" :{
+			 "type": "String"
+		},
+		"Sqlserver_skucapacity" :{
+			 "type": "String"
+		}
+	},
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2021-11-01-preview",
+            "name": "[parameters('Sqlserver_name')]",
+            "location": "",
+            "kind": "v12.0",
+            "properties": {
+                "administratorLogin": "[parameters('Sqlserver_administratorLogin')]",
+                "administratorLoginPassword": "[parameters('Sqlserver_administratorLoginPassword')]",
+                "restrictOutboundNetworkAccess": "Disabled",
+                "publicNetworkAccess": "Enabled",
+                "minimalTlsVersion": "1.2"
+            }
+        }
+       
+    ],
+    "outputs": {}
+}

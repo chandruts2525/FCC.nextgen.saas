@@ -1,0 +1,23 @@
+@import "../../../commonStyles.scss";
+
+.form-checkbox {
+  .ms-Checkbox-checkbox {
+    background-color:#fff !important;
+    border: 1px solid #616161 !important;
+  }
+
+  .ms-Checkbox-checkbox:hover {
+    border: 1px solid #616161 !important;
+  }
+}
+.is-checked label .ms-Checkbox-checkbox {
+    background-color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+.is-checked.is-disabled label .ms-Checkbox-checkbox {
+  background-color: #ccc !important;
+  border: 1px solid #aaa !important;
+}
+.tooltip-container .content .checkbox-list-container .checkbox-container .checkbox.is-disabled .ms-Checkbox-label .ms-Checkbox-checkbox {
+  border: 1px solid #aaa !important;
+}

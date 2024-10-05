@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+       "webapp_name": {
+            "type": "String"
+		},
+		 "webapp_environment": {
+            "type": "String"
+		},
+        "webapp_CURRENT_STACK": {
+            "type": "String"	 
+        },
+        "asp_name": {
+            "type": "String"
+		},
+		"serverFarmId" : {
+            "type": "String"
+		}
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+		{
+				"apiVersion": "2021-03-01",
+				"name": "[parameters('webapp_name')]",
+				"type": "Microsoft.Web/sites",
+				"location": "[resourceGroup().location]",
+				"tags": {},
+				"kind": "app",
+				"properties": {
+					"name": "[parameters('webapp_name')]",
+					"siteConfig": {
+						"appSettings": [],
+						"metadata": [
+							{
+								"name": "CURRENT_STACK",
+								"value": "[parameters('webapp_CURRENT_STACK')]"
+							}
+						],
+						"phpVersion": "",
+						"netFrameworkVersion": "",
+						"alwaysOn": false,
+						"http20Enabled": true,
+						"windowsFxVersion": "",
+						"use32BitWorkerProcess": false
+					},
+					"serverFarmId": "[parameters('serverFarmId')]",
+					"clientAffinityEnabled": true,
+					"httpsOnly": true,
+					"ftpsState": "disabled",
+					"minTlsVersion": "1.2"
+				}
+			   
+			  
+		}
+    ]
+}

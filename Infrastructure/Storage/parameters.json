@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storage_name": {
+            "value": ""
+		},
+		"storage_kind": {
+            "value": "StorageV2"
+		},
+		"storage_skuname": {
+            "value": "Standard_LRS"
+		},
+		"storage_skutier": {
+            "value": "Standard"
+		},
+		"blobname" :{
+			"value": ""
+		}
+    }
+    }

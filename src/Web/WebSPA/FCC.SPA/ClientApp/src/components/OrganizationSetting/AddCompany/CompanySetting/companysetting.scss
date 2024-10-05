@@ -1,0 +1,112 @@
+@import "../../../../commonStyles.scss";
+
+.swt-status {
+    margin-top: 10px;
+}
+
+.address-checkbox {
+    float: right;
+
+    .ms-Checkbox-text {
+        font-size: $rts-1;
+    }
+}
+
+.d-flex {
+    display: flex;
+    // flex-wrap: wrap;
+
+    .ms-TextField {
+        width: 342px;
+        margin-right: 21px;
+
+        @include desktop1366 {
+            width: 290px;
+        }
+
+        @include smalldesktop {
+            width: 300px;
+        }
+
+        @include tablet {
+            width: 215px;
+        }
+
+        @include tabletMin {
+            width: 79.5%;
+        }
+
+    }
+}
+
+.add-domainIdentifier-block {
+    .plusicon {
+        height: 28px;
+        width: 28px;
+        background: var(--primary-color);
+        text-align: center;
+        line-height: 28px;
+        border-radius: 4px;
+        color: #fff;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    .domainIdentifier-list-block {
+        margin: 0 0 5px 0;
+        padding: 0 5px 0 0;
+        list-style: none;
+        overflow-y: auto;
+        max-height: 150px;
+
+        li {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            border: 1px solid #d1d1d1;
+            height: 32px;
+            width: 300px;
+            border-radius: 4px;
+            display: block;
+            padding: 0 10px;
+            line-height: 32px;
+            font-family: $Typo-Regular;
+            font-size: $rts-1;
+            font-weight: normal;
+            margin-right: 21px;
+
+            @include desktop1366 {
+                width: 290px;
+            }
+
+            @include smalldesktop {
+                width: 300px;
+            }
+
+            @include tablet {
+                width: 215px;
+            }
+
+            @include tabletMin {
+                width: 82.5%;
+            }
+
+            &.disabled {
+                background-color: #F3F2F1;
+            }
+        }
+
+        .delete-icon {
+            height: 28px;
+            width: 28px;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 4px;
+            margin-top: 2px;
+            border: 1px solid #d1d1d1;
+            cursor: pointer;
+        }
+    }
+}

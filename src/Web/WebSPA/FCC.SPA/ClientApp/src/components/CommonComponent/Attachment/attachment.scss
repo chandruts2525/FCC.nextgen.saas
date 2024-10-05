@@ -1,0 +1,205 @@
+@import '../../../commonStyles.scss';
+
+.attachment-btn {
+    font-family: $Typo-Regular;
+    font-size: $rts-1;
+    border-radius: 4px;
+    padding:10px;
+    height: 32px;
+    white-space: nowrap;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color:#fff;
+    min-width: 30px;
+    line-height:14px;
+}
+
+.attachment-block {
+  width:100%;
+  width: 98%;
+  border: 1px solid #d1d1d1;
+  padding: 10px 0;
+  margin: 0 10px 15px 10px;
+  border-radius: 4px;
+
+  .upload-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-family: $Typo-SemiBold;
+    font-size: $rts-1;
+}
+.upload-attachments {
+  padding:10px;
+  .error-message-block {
+    border:1px solid var(--danger);
+    color:var(--danger);
+    font-size: $rts-1;
+    padding:10px 25px;
+    border-radius:4px;
+    margin-top:10px;
+    width:100%;
+  }
+  .dragDrop {
+    height: 100%;
+    .dropzone {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+  
+      &.dragging {
+        .draggable-container {
+           border:1px solid var(--primary-color);
+        }
+      }
+      .draggable-container {
+        color: #f0f0f0;
+        border: 1px solid #e8e8e8;
+        position: relative;
+        height: 70px;
+        width: 100%;      
+  
+        input {
+          appearance: initial;
+          opacity: 0;
+  
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          min-height: 30px;
+        }
+  
+        .header-container-attachment {
+          position: absolute;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: -webkit-fill-available;
+          font-size: $rts-1;
+          padding-left:8px;
+          color:#242424;
+          flex-direction: column;
+          .sub-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: $rts-1;
+            color:#242424;          
+          }
+          .allowed-format-header {
+            color: #aaa;
+            text-align: center;
+          }
+        }      
+      }     
+    }
+  
+    .upload-error-message {
+      color: var(--danger);
+      font-size: 11px;
+      margin-top: 15px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  .file-list::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  .file-list {
+  max-height: 160px;
+  margin-top: 10px;
+  overflow: auto;
+
+  table {
+    font-family: $Typo-Regular;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: $rts-1;
+
+    td, th {
+      border: 1px solid #d1d1d1;
+      text-align: left;
+      padding:  4px 8px;
+      width:50%;
+      .image-block {
+        float: right;
+        display: flex;
+        div {
+            border:1px solid #d1d1d1;
+            margin-right:10px;
+            border-radius: 4px;
+            height: 22px;
+            width: 22px;
+
+            &:last-child {
+              margin-right:0;
+            }
+        }
+      }
+    }
+  }
+  
+  .file:first-child {
+    margin-top: 0px;
+  }
+  
+  .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 30px;
+    background: #fafafa 0 0 no-repeat padding-box;
+    border: 1px solid #c3c3c373;
+    margin-top: 5px;
+    padding: 8px;
+  
+    img {
+      width: 9px;
+      cursor: pointer;
+    }
+  
+    .label {
+      margin-bottom: 0px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 95%;
+      overflow: hidden;
+    }
+  }
+  }
+  
+  .no-attachments, .no-file {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0;
+    font-size: $rts-1;
+    //color:var(--danger);
+  }
+  .progress-bar {
+  height:60px;
+  border:1px solid #ddd;
+  border-radius:2px;
+  padding:5px;
+  .main-container {
+    width:100%;
+    clear:both;
+    height:40px;
+  
+    .upload-text {
+      font-size:$rts-1;
+  
+        span {
+        font-size:10px;
+        }
+    }
+    .attachment-close {
+      height:15px;
+      width:15px;
+    }
+  }
+  }
+}
+}

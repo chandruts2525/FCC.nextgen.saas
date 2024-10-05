@@ -1,0 +1,48 @@
+resources:
+  repositories:
+    - repository: Pipelines
+      type: git
+      name: EAG/Pipelines
+      ref: TemplateV2
+schedules:
+- cron: "45 21 * * 1,2,3,4,5"
+  displayName: Nightly
+  branches:
+    include:
+      - develop  
+  always: false
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
+variables:
+#- group: NightlyStepsConfiguration
+- group: CycloneDXApiKey
+- name: buildConfiguration
+  value: 'Release'
+- name: pipeline.runAnalysisStep
+  value: 'True'
+- name: pipeline.runUnitTestStep
+  value: 'True'
+- name: BuildPlatform
+  value: 'any cpu'
+- name: NUGET.PLUGIN.HANDSHAKE.TIMEOUT.IN.SECONDS
+  value: 30
+- name: NUGET.PLUGIN.REQUEST.TIMEOUT.IN.SECONDS
+  value: 30
+pool:
+  name: 'Default'
+  demands:
+  - VM
+trigger: none
+extends:
+  template: jobtemplates/coreapitemplate.yml@Pipelines
+  parameters:
+    runGitLeaks: 'false'
+    nugetAuthenticateServiceConnections: 'Softura_LIB'
+    dotnetrestoresolutionpath: 'src/Services/**/*.csproj'
+    dotnetPublishProjectPath: 'src/Services/**/*.csproj'
+    dotnetrestorevstsfeed: 'eead0206-6959-4e49-b193-074e4872ef5d/e15077aa-1401-474b-b7fe-9ed881bc7c8c'
+    sonarqubeName: 'SonarQubeConnection'
+    projectKey: 'FCC.nextgen.saas'
+    projectName: 'FCC nextgen saas'
+    cyclonedxsolutionpath: 'src/Services/**/*.csproj'
+    ProjectGuid: '3ab3a577-37cd-4f8b-bef9-3bdcdc093b2b'

@@ -1,0 +1,44 @@
+@import "../../../commonStyles.scss";
+
+.pivot {
+  .ms-Pivot {
+    border-bottom: 1px solid #d1d1d1;
+
+    @include tabletMin {
+      overflow-x: auto;
+    }
+
+    .ms-Pivot-link {
+      background-color: #fff;
+      color: #333;
+      margin-right: 0;
+      font-family: $Typo-Regular;
+      font-size: $rts-2;
+      min-width: auto;
+      font-weight: normal;
+      padding: 0;
+      margin-right: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .ms-Pivot-link.is-selected {
+      background-color: #fff;
+      color: #333;
+      font-family: $Typo-SemiBold;
+      border-bottom: 3px solid var(--primary-color);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  div[role="tabpanel"] {
+    padding: 15px 0;
+
+    .ms-Label {
+      font-weight: normal;
+    }
+  }
+}

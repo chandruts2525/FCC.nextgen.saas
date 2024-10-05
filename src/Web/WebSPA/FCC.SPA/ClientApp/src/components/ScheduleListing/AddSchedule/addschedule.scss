@@ -1,0 +1,24 @@
+@import '../../../commonStyles.scss';
+
+.add-schedule-container{
+    .addScheduleLabel{
+        display: inline-block;
+        padding-right: 3px;
+    }
+    .checkboxContainer{
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        .checkboxText{
+            font-size: $rts-2;
+            font-family: $Typo-Regular;
+            padding: 0 8px 15px 8px;
+        }
+    }
+    span {
+        img {
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    }
+}

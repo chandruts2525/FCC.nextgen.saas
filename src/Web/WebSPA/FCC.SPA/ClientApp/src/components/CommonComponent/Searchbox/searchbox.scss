@@ -1,0 +1,47 @@
+@import "../../../commonStyles.scss";
+
+.searchbox {
+  position: relative;
+  float: left;
+  width: 270px;
+  height: 34px;
+
+  @include mobiledevices {
+    width:100%;
+  }
+
+  .ms-SearchBox {
+    border-color: #d1d1d1;
+    height: 34px;
+    margin: 0;
+    background: #0071CD05 0% 0% no-repeat padding-box;
+    font-size: $rts-1;
+    border-radius: 4px;
+
+    &::after {
+      border-color: #d1d1d1;
+    }
+
+    .ms-SearchBox-icon {
+      color: #616161;
+      font-size:$rts-3;
+      transform: rotate(265deg);
+    }
+    .ms-SearchBox-field {
+      font-family: $Typo-Regular;
+    }
+  }
+}
+
+.ms-SearchBox-clearButton {
+  button {
+    background-color: #F3F2F1;
+  }
+  }
+
+.microphone-icon {
+  position: absolute;
+  right: 9px;
+  top: 30px;
+  color: #424242;
+}

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Softura.EntityFrameworkCore.SqlServer" Version="2023.11.22.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\FCC.Core\FCC.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Shared\FCC.Data\FCC.Data.csproj" />
+    <ProjectReference Include="..\..\..\Administration\IAC\IAC.Domain\IAC.Domain\IAC.Domain.csproj" />
+    <ProjectReference Include="..\..\OrganizationStructure\OrganizationStructure.Domain\OrganizationManagement.Domain.csproj" />
+    <ProjectReference Include="..\WorkManagement.Domain\WorkManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

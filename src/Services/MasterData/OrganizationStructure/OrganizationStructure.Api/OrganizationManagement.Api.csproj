@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>eae10973-bfa1-4c4a-8c3f-5d1eaca13773</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Softura.Web" Version="2023.12.19.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\FCC.Core\FCC.Core.csproj" />
+    <ProjectReference Include="..\..\..\Administration\IAC\IAC.Domain\IAC.Domain\IAC.Domain.csproj" />
+	  <ProjectReference Include="..\..\..\Administration\IAC\IAC.Service\IAC.Service.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.DataAccess.Sql\OrganizationManagement.DataAccess.Sql.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.Domain\OrganizationManagement.Domain.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.Service\OrganizationManagement.Service.csproj" />
+  </ItemGroup>
+
+</Project>

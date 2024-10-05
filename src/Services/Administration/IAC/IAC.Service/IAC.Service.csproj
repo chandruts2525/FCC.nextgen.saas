@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="Softura.Azure.Storage.Blobs" Version="2023.12.10.1" />
+    <PackageReference Include="Softura.EntityFrameworkCore" Version="2023.11.22.3" />
+    <PackageReference Include="Softura.EntityFrameworkCore.SqlServer" Version="2023.11.22.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\FCC.Core\FCC.Core.csproj" />
+    <ProjectReference Include="..\..\..\MasterData\OrganizationStructure\OrganizationStructure.Domain\OrganizationManagement.Domain.csproj" />
+    <ProjectReference Include="..\IAC.DataAccess\IAC.DataAccess.Sql.csproj" />
+  </ItemGroup>
+
+</Project>

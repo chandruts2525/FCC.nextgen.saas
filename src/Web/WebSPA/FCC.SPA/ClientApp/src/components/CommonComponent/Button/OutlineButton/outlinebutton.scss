@@ -1,0 +1,26 @@
+@import "../../../../commonStyles.scss";
+
+.outline-btn {
+  font-family: $Typo-SemiBold !important;
+  font-size: $rts-1;
+  border-radius: 4px;
+  padding: 5px 10px;
+  height: 32px;
+  white-space: nowrap;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  min-width:30px;
+  
+  &:hover,
+  &:active {
+    background-color: #fff;
+    color: #242424;
+    border-color: var(--primary-color);
+  }
+  &:focus {
+    box-shadow:  none;
+  }
+  &:disabled{
+    opacity: 0.3;
+  }
+}

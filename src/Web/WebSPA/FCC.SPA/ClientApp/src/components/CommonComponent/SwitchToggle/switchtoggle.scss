@@ -1,0 +1,32 @@
+@import "../../../commonStyles.scss";
+
+.ms-Toggle.is-checked .ms-Toggle-background {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+
+    .ms-Toggle-thumb,
+    .ms-Toggle-thumb:hover {
+        background: #fff !important;
+    }
+}
+
+.ms-Toggle.is-checked .ms-Toggle-background:hover {
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+}
+
+.ms-Toggle {
+
+    .ms-Toggle-background,
+    .ms-Toggle-background:hover {
+        width: 45px;
+        height: 22px;
+        border-radius: 25px;
+        border: 1px solid #aaa;
+
+        .ms-Toggle-thumb,
+        .ms-Toggle-thumb:hover {
+            background-color: #aaa;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "CPQtxt" : "CPQ",
+    "Scheduletxt" : "Schedule",
+    "ETickettxt" : "E-Ticket",
+    "Invoicetxt" : "Invoice",
+    "Maintenancetxt" : "Maintenance",
+    "Inventorytxt" : "Inventory",
+    "Safetytxt" : "Safety",
+    "BItxt" : "BI",
+    "Settingtxt" : "Setting",
+    "WhatsNewtxt" : "What's New",
+    "LogOut" : "Log Out"
+  }

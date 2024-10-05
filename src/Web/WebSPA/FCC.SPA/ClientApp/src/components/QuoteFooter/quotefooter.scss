@@ -1,0 +1,14 @@
+@import '../../commonStyles.scss';
+
+.module-company-list {
+    list-style: none;
+    margin:0;
+    padding:5px;
+    font-size: $rts-1;
+    font-family: $Typo-Regular;
+  
+     li {
+        padding:5px;
+        color: #242424;
+     }
+}

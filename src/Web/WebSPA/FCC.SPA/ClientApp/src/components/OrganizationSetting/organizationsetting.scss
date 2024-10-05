@@ -1,0 +1,13 @@
+@import '../../commonStyles.scss';
+
+.organization-hierarchy-container {
+    .corporate-add {
+        margin-top: 22px;
+    }
+
+    .add-organization-block {
+        @include tabletMin {
+            width: 100%;
+        }
+    }
+}

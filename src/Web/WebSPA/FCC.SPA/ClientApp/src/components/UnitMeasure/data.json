@@ -1,0 +1,122 @@
+[
+    {
+        "id" : 1,
+        "Code" : "5WG5",
+        "Name":"Length",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "10",
+        "Status":"Active",
+        "CreatedBy" : "Davidson",
+        "CreatedDate":"22/09/2023",
+        "ModifiedBy" : "Davidson",
+        "ModifiedDate":"22/09/2023"
+    },
+    {
+        "id" : 2,
+        "Code" : "JUD7",
+        "Name":"Time",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "20",
+        "Status":"Active",
+        "CreatedBy" : "Jhon Almedia",
+        "CreatedDate":"16/09/2023",
+        "ModifiedBy" : "Jhon Almedia",
+        "ModifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 3,
+        "Code" : "DV8A",
+        "Name":"Frequency",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "12",
+        "Status":"InActive",
+        "CreatedBy" : "Amber Pearce",
+        "CreatedDate":"09/09/2023",
+        "ModifiedBy" : "Amber Pearce",
+        "ModifiedDate":"09/09/2023"
+    },
+    {
+        "id" : 4,
+        "Code" : "G4Z3",
+        "Name":"Area",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "25",
+        "Status":"InActive",
+        "CreatedBy" : "Michael James",
+        "CreatedDate":"02/09/2023",
+        "ModifiedBy" : "Michael James",
+        "ModifiedDate":"02/09/2023"
+    },
+    {
+        "id" : 5,
+        "Code" : "QB0A",
+        "Name":"Volume",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "500",
+        "Status":"InActive",    
+        "CreatedBy" : "John Martin",
+        "CreatedDate":"25/08/2023",
+        "ModifiedBy" : "John Martin",
+        "ModifiedDate":"25/08/2023"
+    },
+    {
+        "id" : 6,
+        "Code" : "5WG5",
+        "Name":"Length",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "10",
+        "Status":"Active",
+        "CreatedBy" : "Davidson",
+        "CreatedDate":"22/09/2023",
+        "ModifiedBy" : "Davidson",
+        "ModifiedDate":"22/09/2023"
+    },
+    {
+        "id" : 7,
+        "Code" : "JUD7",
+        "Name":"Time",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "20",
+        "Status":"Active",
+        "CreatedBy" : "Jhon Almedia",
+        "CreatedDate":"16/09/2023",
+        "ModifiedBy" : "Jhon Almedia",
+        "ModifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 8,
+        "Code" : "DV8A",
+        "Name":"Frequency",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "12",
+        "Status":"InActive",
+        "CreatedBy" : "Amber Pearce",
+        "CreatedDate":"09/09/2023",
+        "ModifiedBy" : "Amber Pearce",
+        "ModifiedDate":"09/09/2023"
+    },
+    {
+        "id" : 9,
+        "Code" : "G4Z3",
+        "Name":"Area",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "25",
+        "Status":"InActive",
+        "CreatedBy" : "Michael James",
+        "CreatedDate":"02/09/2023",
+        "ModifiedBy" : "Michael James",
+        "ModifiedDate":"02/09/2023"
+    },
+    {
+        "id" : 10,
+        "Code" : "QB0A",
+        "Name":"Volume",
+        "MeasureType" : "Time",
+        "ConversionFactor" : "500",
+        "Status":"InActive",    
+        "CreatedBy" : "John Martin",
+        "CreatedDate":"25/08/2023",
+        "ModifiedBy" : "John Martin",
+        "ModifiedDate":"25/08/2023"
+    }
+]

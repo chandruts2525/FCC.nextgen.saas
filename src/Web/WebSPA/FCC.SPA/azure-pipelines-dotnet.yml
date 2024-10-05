@@ -1,0 +1,228 @@
+parameters:
+  - name: SonarQube_Run
+    displayName: Run SonarQube
+    type: boolean
+    default: false
+    values:
+      - True
+      - false
+resources:
+  repositories:
+    - repository: Pipelines
+      type: git
+      name: EAG/Pipelines
+      ref: TemplateV2
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
+variables:
+- group: NightlyStepsConfiguration
+- group: CycloneDXApiKey
+- name: buildConfiguration
+  value: 'Release'
+- name: pipeline.runAnalysisStep
+  value: 'True'
+- name: pipeline.runUnitTestStep
+  value: 'True'
+- name: BuildPlatform
+  value: 'any cpu'
+pool:
+      VmImage: 'windows-latest'      
+trigger:
+  branches:
+    include:
+    - develop
+  batch: True
+  paths:
+    exclude:
+    - src/Web/WebSPA/FCC.SPA/azure-pipelines-dotnet.yml
+stages:
+- stage: __default
+  jobs:
+  - job: Job_1
+    displayName: Agent job 1
+    pool:
+      VmImage: 'windows-latest'
+    steps:      
+    
+    - powershell: |
+        # Write your powershell commands here.
+        
+        If ($env:Build_Reason  -eq 'Schedule') {
+        Write-Host "##vso[build.addbuildtag]nightly"
+        }
+        
+        If ($env:Build_Reason  -eq 'Manual') {
+        Write-Host "##vso[build.addbuildtag]manual"
+        }
+   
+      displayName: 'Tag build'
+    - powershell: |
+        Write-Host "Configured value for CodeAnalysisNightlyOnly - $env:NightlyStepsConfiguration_CodeAnalysisNightlyOnly"
+        Write-Host "Configured value for UnitTestNightlyOnly - $env:NightlyStepsConfiguration_UnitTestNightlyOnly"
+        
+                
+        If ($env:NightlyStepsConfiguration_CodeAnalysisNightlyOnly -eq 'True')
+        {
+            If ($env:Build_Reason  -eq 'Schedule') 
+            {
+                #This is a scheduled build
+                Write-Output "Scheduled build"
+                $env:pipeline_runAnalysisStep=$TRUE
+                Write-Output "##vso[task.setvariable variable=pipeline.runAnalysisStep]True"
+            }
+            else
+            {
+                Write-Output "Not a Scheduled build"
+                $env:pipeline_runAnalysisStep=$FALSE
+                Write-Output "##vso[task.setvariable variable=pipeline.runAnalysisStep]False"
+            }
+        }
+                
+        If ($env:NightlyStepsConfiguration_UnitTestNightlyOnly -eq 'True')
+        {
+            If ($env:Build_Reason  -eq 'Schedule') 
+            {
+                #This is a scheduled build
+                $env:pipeline_runUnitTestStep=$TRUE
+                Write-Output "##vso[task.setvariable variable=pipeline.runUnitTestStep]True"
+            }
+            else
+            {
+                $env:pipeline_runUnitTestStep=$FALSE
+                Write-Output "##vso[task.setvariable variable=pipeline.runUnitTestStep]False"
+            }
+        }
+        
+        
+        Write-Output "Run analysis set to  $env:pipeline_runAnalysisStep"
+        Write-Output "Run unit test set to  $env:pipeline_runUnitTestStep"
+      displayName: 'Determine Steps to Skip'
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk 6.x'
+      enabled: true
+      inputs:
+        version: 6.x
+     # condition: eq(variables['Agent.Name'], 'USSVSTSBUILD02')
+    - task: NuGetToolInstaller@1
+      displayName: 'Use NuGet '
+      enabled: true
+    - task: NuGetAuthenticate@1
+      displayName: 'NuGet Authenticate'
+      enabled: true
+      inputs:
+        forceReinstallCredentialProvider: true
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet restore'
+      enabled: true
+      inputs:
+        command: restore
+        projects: 'src/Web/WebSPA/FCC.SPA/FCC.SPA.csproj'
+        feedsToUse: config
+        externalFeedCredentials: 'Softura_LIB'
+        nugetConfigPath: 'nuget.config'
+        
+    - task: NodeTool@0
+      displayName: Use Node 16.15.1
+      inputs:
+        versionSpec: 16.15.1
+        checkLatest: true
+      enabled: true
+    - task: DeleteFiles@1
+      displayName: Delete Node Modules
+      inputs:
+        SourceFolder: $(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp/node_modules
+        Contents: '*'
+        RemoveSourceFolder: true
+      enabled: false
+    - task: DeleteFiles@1
+      displayName: Delete package lock.json
+      inputs:
+        SourceFolder: $(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp
+        Contents: package-lock.json
+      enabled: true
+    - task: CmdLine@2
+      inputs:
+        script: 'npx vsts-npm-auth -config .npmrc'
+        workingDirectory: '$(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp'
+      enabled: false
+
+    - task: Npm@1
+      displayName: NPM Install dependencies
+      inputs:
+        command: 'custom'
+        workingDir: 'src/Web/WebSPA/FCC.SPA/ClientApp'
+        customCommand: 'install --legacy-peer-deps'
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        workingDir: 'src/Web/WebSPA/FCC.SPA/ClientApp'
+        customCommand: 'run build'
+        verbose: true
+    
+    - task: CopyFiles@2
+      enabled: false
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp/Build'
+        Contents: '**'
+        TargetFolder: '$(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp'
+    
+    - task: CopyFiles@2
+      enabled: false
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp/Build'
+        Contents: '**'
+        TargetFolder: '$(Build.artifactstagingdirectory)/FCC.SPA/ClientApp/Build'
+    - task: ArchiveFiles@2
+      displayName: Archive Build Artifacts
+      inputs:
+        rootFolderOrFile: $(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp
+        includeRootFolder: false
+        archiveFile: $(Build.ArtifactStagingDirectory)/FCCUI.zip
+      enabled: false
+
+    - task: SonarQubePrepare@5
+      displayName: Prepare analysis on SonarQube
+      inputs:
+        SonarQube: 'SonarQubeConnection'
+        scannerMode: CLI
+        configMode: manual
+        cliProjectKey: FCC.nextgen.saas.UI
+        cliProjectName: FCC nextgen saas UI
+      condition: and(succeeded(), or(eq(variables['pipeline.runAnalysisStep'], 'True'),eq('${{ parameters.SonarQube_Run }}', True)))
+
+
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet publish'
+      retryCountOnTaskFailure: 3
+      inputs:
+        command: publish
+        publishWebProjects: false
+        projects: 'src/Web/WebSPA/FCC.SPA/FCC.SPA.csproj'
+        arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)'
+        
+    - task: SonarQubeAnalyze@5
+      displayName: Run Code Analysis
+      condition: and(succeeded(), or(eq(variables['pipeline.runAnalysisStep'], 'True'),eq('${{ parameters.SonarQube_Run }}', True)))
+
+    - task: SonarQubePublish@5
+      displayName: Publish Quality Gate Result
+      condition: and(succeeded(), or(eq(variables['pipeline.runAnalysisStep'], 'True'),eq('${{ parameters.SonarQube_Run }}', True)))
+
+    - task: CopyFiles@2
+      enabled: false
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp/Build'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)\ClientApp/Build'
+    - task: DeleteFiles@1
+      enabled: false
+      continueOnError: true      
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/src/Web/WebSPA/FCC.SPA/ClientApp/Build'
+        Contents: '**'
+        RemoveSourceFolder: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+      inputs:
+        PathtoPublish: $(Build.ArtifactStagingDirectory)

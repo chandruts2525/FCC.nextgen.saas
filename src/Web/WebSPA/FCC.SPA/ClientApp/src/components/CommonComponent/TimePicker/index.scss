@@ -1,0 +1,33 @@
+@import "../../../commonStyles.scss";
+
+.ms-ComboBox-callout:has(.ms-ComboBox-optionsContainer) {
+    max-height: 250px !important;
+}
+
+.ms-ComboBox {
+    font-size: $rts-1;
+
+    &::after {
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+    }
+
+    &:hover::after,
+    &:hover {
+        border-color: #d1d1d1;
+    }
+
+    .ms-ComboBox-CaretDown-button {
+        span {
+            &::before {
+                content: url("../../../assets/images/Clock.svg");
+                position: absolute;
+                top: 5px;
+            }
+
+            i {
+                display: none;
+            }
+        }
+    }
+}

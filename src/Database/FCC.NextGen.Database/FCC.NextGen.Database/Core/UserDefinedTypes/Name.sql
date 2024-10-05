@@ -1,0 +1,2 @@
+﻿CREATE TYPE [Core].[Name]
+	FROM NVARCHAR(50) NULL;

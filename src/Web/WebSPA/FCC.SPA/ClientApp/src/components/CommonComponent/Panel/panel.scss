@@ -1,0 +1,38 @@
+@import '../../../commonStyles.scss';
+
+.ms-Panel-commands {
+    padding-top: 7px;
+    margin-bottom: 5px;
+
+    .ms-Panel-navigation {
+        border-bottom: 1px solid #d1d1d1;
+
+        .ms-Panel-header {
+            padding: 0;
+            margin: 0 15px 5px 15px;
+
+            .ms-Panel-headerText {
+                font-size: $rts-5;
+                color: var(--primary-color);
+                font-family: $Typo-SemiBold;
+            }
+        }
+
+        .ms-Panel-closeButton {
+            height: 16px;
+            width: 16px;
+            margin: 4px 10px 0 0;
+            color: #242424
+        }
+    }
+}
+
+.ms-Panel-content {
+    padding: 0 13px;
+    font-family: $Typo-Regular;
+}
+
+.ms-Panel-footer {
+    border-top: 1px solid #d1d1d1;
+    margin-top: 15px;
+}

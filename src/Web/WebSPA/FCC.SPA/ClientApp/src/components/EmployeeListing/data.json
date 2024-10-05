@@ -1,0 +1,92 @@
+[
+    {
+        "id" : 1,
+        "name":"AutomationEmptype1",
+        "status":"Active",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 2,
+        "name":"AutomationEmptype2",
+        "status":"Active",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 3,
+        "name":"Driver",
+        "status":"InActive",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 4,
+        "name":"MECHANIC",
+        "status":"InActive",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 5,
+        "name":"Office",
+        "status":"Active",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 6,
+        "name":"AutomationEmptype1",
+        "status":"Active",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 7,
+        "name":"AutomationEmptype2",
+        "status":"Active",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 8,
+        "name":"Driver",
+        "status":"InActive",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 9,
+        "name":"MECHANIC",
+        "status":"InActive",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "id" : 10,
+        "name":"Office",
+        "status":"Active",
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    }
+]

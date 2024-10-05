@@ -1,0 +1,177 @@
+@import '../../../commonStyles.scss';
+
+.sun-editor {
+  font-family: $Typo-Regular;
+  font-weight: 500;
+  font-size: $rts-1;
+
+  label {
+    font-family: $Typo-SemiBold;
+    font-size:$rts-1 !important;
+    font-weight:400 !important;
+    color: #242424 !important;
+  }
+  .se-wrapper-inner {
+    height: 100vh !important;
+  }
+  .se-toolbar {
+    .se-btn-module-enter {
+      display: inline;
+    }
+  }
+  .se-dialog-tabs button {
+    background-color: #fff;
+    border-right:none;
+  }
+  .se-menu-list {
+    font-family: $Typo-Regular;
+    font-weight: 500;
+    font-size: $rts-1;
+  }
+
+  .se-btn>svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .se-menu-list li {
+    margin-right:5px;
+
+    &:last-child {
+      margin-right:0;
+    }
+  }
+  .se-btn-select {
+    width: auto !important;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    height:30px;
+
+     svg {
+      width: 10px !important;
+      height: 10px !important;
+      margin-left:10px;
+    }
+  }
+
+  .se-btn-tray {
+    padding: 6px 3px 0;
+  }
+
+  .se-dialog {
+    .se-dialog-inner {
+      .se-dialog-form {
+        .se-input-form {
+          padding:7px 5px;
+          font-size: $rts-1;
+          margin-right:5px;
+        }
+      }
+      .se-dialog-size-text{
+        .size-w,.size-h{
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .se-btn-primary {
+    height: 32px;
+    background-color: var(--primary-color);
+    color: #fff !important;
+    border: 1px solid var(--primary-color);
+
+    &:hover {
+      height: 32px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: 1px solid var(--primary-color);
+    }
+  }
+ .se-btn-module-border{
+  border: 0;
+  .se-btn-select{
+    border: 1px solid #d1d1d1;
+  }
+ }
+ .se-dialog .se-dialog-inner .se-dialog-header {
+    background-color: var(--primary-color);
+    height: 35px;
+    padding: 0px 15px;
+    border-bottom: none;
+
+    .se-modal-title {
+      color: #fff;
+    }
+
+    .se-btn {
+      color: #fff;
+
+      &:enabled {
+        &:hover {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .se-dialog-tabs {
+    margin-top: 5px;
+    height:29px;
+
+    button {
+      padding: 2px 10px 5px 10px;
+      &.active {
+        border-bottom: 2px solid var(--primary-color);
+      }
+    }
+  }
+
+  textarea {
+    &:focus {
+      border: 1px solid #d1d1d1;
+      box-shadow: none;
+    }
+  }
+
+  input {
+    &:focus {
+      border: 1px solid #d1d1d1;
+      box-shadow: none;
+    }
+  }
+
+  select {
+    &:focus {
+      border: 1px solid #d1d1d1;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.sun-editor-common {
+  font-family: $Typo-Regular;
+  font-weight: 500;
+  font-size: $rts-1;
+
+  form {
+    font-family: $Typo-Regular;
+    font-weight: 500;
+    font-size: $rts-1;
+  }
+}
+
+.se-dialog-tabs {
+  font-family: $Typo-Regular;
+  font-weight: 500;
+  font-size: $rts-1;
+}
+.se-dialog-body {
+  > div {
+    border-bottom:none !important;
+  }
+}
+.se-dialog-footer {
+  padding: 10px 15px 0 5px !important;
+}

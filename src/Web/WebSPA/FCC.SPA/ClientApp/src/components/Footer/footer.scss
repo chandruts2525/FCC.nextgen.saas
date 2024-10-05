@@ -1,0 +1,18 @@
+@import "../../commonStyles.scss";
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0px 0px 8px #0000000b;
+    font-size: $rts-1;
+
+    @include mobiledevices {
+        display: block;
+
+        div {
+            text-align: center;
+            line-height: 24px;
+        }
+    }
+}

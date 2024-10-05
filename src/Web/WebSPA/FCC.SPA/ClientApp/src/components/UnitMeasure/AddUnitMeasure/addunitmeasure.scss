@@ -1,0 +1,14 @@
+@import "../../../commonStyles.scss";
+
+.addUnitMeasure-container {
+  .addUnitLabel {
+    display: inline-block;
+    padding-right: 3px;
+  }
+  span {
+    img {
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+}

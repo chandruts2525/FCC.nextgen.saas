@@ -1,0 +1,60 @@
+@import '../../../commonStyles.scss';
+
+.add-role-container {
+    .add-role-attachment {
+        width: 98%;
+    }
+
+    .searchbox {
+        width: 98%;
+        margin-bottom: 10px;
+
+        .source-searchbox {
+            width: 95%;
+
+            @include mobiledevices {
+                width: 100%;
+            }
+        }
+    }
+
+    .modified-by {
+        text-align: right;
+        display: block;
+    }
+
+    .created-by {
+        @include mobiledevices {
+            margin-top: 15px;
+        }
+    }
+
+    .created-by,
+    .modified-by {
+        font-size: $rts-1;
+        color: #424242;
+
+        b {
+            color: #242424;
+        }
+
+        @include mobiledevices {
+            display: block;
+            text-align: right;
+        }
+    }
+
+    .role-attachment-btn-block {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+
+        .margin-top {
+            margin-top: 22px;
+
+            @include mobiledevices {
+                margin-top: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "../../../commonStyles.scss";
+
+.datepicker {
+  .ms-TextField-fieldGroup {
+    height: 32px;
+    font-size: $rts-1;
+    color: #000;
+    border: 1px solid #d1d1d1 !important;
+    border-radius: 4px;
+
+    &:hover {
+      height: 32px;
+      border: 1px solid #d1d1d1
+    }
+
+    .ms-TextField-field {
+      font-size: $rts-1;
+      padding: 0px 24px 0px 4px;
+    }
+
+    .ms-DatePicker-event--without-label {
+      font-size: $rts-2;
+      padding: 7px 2px 5px;
+    }
+  }
+}

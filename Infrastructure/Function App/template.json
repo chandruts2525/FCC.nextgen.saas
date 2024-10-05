@@ -1,0 +1,56 @@
+{
+		"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+		"contentVersion": "1.0.0.0",
+		"parameters": {
+			"functionapp_name" :{
+				"type": "String"
+			},
+			"asp_name": {
+                "type": "String"
+            },
+			"storage_name": {
+                "type": "String"
+		    },
+			"serverFarmId" : {
+            "type": "String"
+		}
+			
+		},
+		"functions": [],
+		"variables": {
+			"storageResourceId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storage_name'))]"
+		},
+		 "resources": [
+			{
+				"name": "[parameters('functionapp_name')]",
+				"type": "Microsoft.Web/sites",
+				"apiVersion": "2020-12-01",
+				"location": "[resourceGroup().location]",
+				"kind": "functionapp",
+				"properties": {
+					"serverFarmId": "[parameters('serverFarmId')]",
+					"siteConfig": {
+						"appSettings": [
+							{
+								"name": "FUNCTIONS_EXTENSION_VERSION",
+								"value": "~4"
+							}
+							{
+								"name": "FUNCTIONS_WORKER_RUNTIME",
+								"value": "dotnet"
+							}
+						],
+						"phpVersion": "",
+						"netFrameworkVersion": "v6.0",
+						"alwaysOn": false,
+						"http20Enabled": true,
+						"windowsFxVersion": "DOTNETCORE|6.0",
+						"use32BitWorkerProcess": false   
+					},
+						  "httpsOnly": true,
+						  "ftpsState": "disabled",
+						  "minTlsVersion": "1.2"
+				}
+		}
+]
+}

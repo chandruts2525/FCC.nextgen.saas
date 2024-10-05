@@ -1,0 +1,12 @@
+@import '../../../commonStyles.scss';
+
+.add-quotefooter-container {
+    .attachment-block {
+        width: 97%;
+        margin-left: 11px;
+
+        @include mobiledevices {
+            width: 94%;
+        }
+    }
+}

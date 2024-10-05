@@ -1,0 +1,85 @@
+@import '../../../commonStyles.scss';
+
+.breadcrumb-block {
+  position: relative;
+  width:100%;
+
+  
+  @include tabletMin {
+    left:0;
+  }
+
+  .ms-DocumentCard {
+    border-radius: 0;
+    .ms-DocumentCardDetails {
+    padding:5px 15px;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px #0000000B;
+    .breadcrumb {
+      margin: 0;
+      .ms-Breadcrumb-chevron {
+        margin-top:5px;
+        font-size: 8px;
+        font-weight:900;
+        margin-top:3px;
+      }
+      .ms-Breadcrumb-itemLink {
+          color: #616161;
+          font-size: $rts-1;
+          padding: 5px;
+          border-radius: 5px;
+  
+          &:last-child {
+            color: var(--primary-color);
+          }
+    
+          &:active:hover {
+            color: var(--primary-color) !important;
+          }
+    
+          .ms-Breadcrumb-listItem {
+            &:last-child {
+              color: #616161 !important;
+            }
+          }
+  
+          &[active ='true'] {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            text-decoration: none;
+    
+            &:hover {
+              color:#fff;
+            }        
+          }
+      }
+    
+      .ms-TooltipHost {
+        font-size: $rts-3;
+        min-width:20px;
+        max-width: 200px;
+        display: inline-block;
+    
+        @include mobiledevices {
+          font-size:11px;
+          min-width:30px;
+        }
+      }
+      .ms-Breadcrumb-item {
+        line-height: 30px;
+        padding:0 5px;
+      }
+    }
+    }
+  }
+}
+
+
+@include mobiledevices {
+  .breadcrumb {
+    margin:0
+  }
+  .ms-Breadcrumb-chevron {
+    margin: 5px 0px 0 0 !important;
+  }
+}

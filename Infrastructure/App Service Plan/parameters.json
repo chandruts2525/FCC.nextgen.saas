@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+		"asp_name": {
+            "value": ""
+		},
+		"asp_skuName": {
+            "value": "S1"
+		},
+		"asp_skuTier": {
+            "value": "Standard"
+		},
+		"asp_skuSize": {
+		    "value": "S1"
+		},
+		"asp_skuFamily": {
+		    "value": "S"
+		},
+		"asp_skuCapacity": {
+            "value": "1"
+		},
+		"asp_kind": {
+            "value": "app"
+		}
+	
+	}
+}

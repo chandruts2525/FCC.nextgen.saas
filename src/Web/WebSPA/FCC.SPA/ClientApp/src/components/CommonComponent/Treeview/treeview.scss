@@ -1,0 +1,220 @@
+@import "../../../commonStyles.scss";
+
+.k-checkbox-md {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(50, 49, 48);
+    border-radius: 2px;
+}
+
+.k-treeview-item {
+    padding: 5px 0 0 24px;
+    position: relative;
+    font-family: $Typo-Regular;
+}
+
+.k-treeview-item:before {
+    content: "";
+    border-top: 1px solid rgb(34, 34, 34) !important;
+    position: absolute;
+    left: 11px;
+    width: 26px !important;
+    height: 1px;
+    top: 17px;
+}
+
+.k-treeview-item:after {
+    content: "";
+    border-left: 1px solid rgb(34, 34, 34);
+    height: 100%;
+    width: 0px;
+    top: -10px;
+    position: absolute;
+    left: 11px;
+}
+
+.k-treeview-toggle .k-svg-i-caret-alt-down:before {
+    content: "-";
+    font-size: 20px;
+    left: 0px;
+    position: relative;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    z-index: 99;
+    border: 1px solid var(--primary-color);
+    padding: 0px 5px;
+    line-height: 15px;
+}
+
+
+.k-treeview-toggle .k-svg-i-caret-alt-right:before {
+    content: "+";
+    font-size: 20px;
+    left: 0px;
+    position: relative;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    z-index: 99;
+    border: 1px solid var(--primary-color);
+    padding: 0px 4px;
+    line-height: 18px;
+}
+
+.k-checkbox:checked,
+.k-checkbox.k-checked {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.k-treeview-leaf.k-selected {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+
+    .FCC_organization-caption::after {
+        border-top: 5px solid var(--primary-color);
+    }
+}
+
+.k-checkbox:focus,
+.k-checkbox.k-focus,
+.k-checkbox:checked:focus,
+.k-checkbox.k-checked.k-focus {
+    box-shadow: none;
+}
+
+.k-checkbox:disabled,
+.k-checkbox.k-disabled {
+    opacity: 1;
+    background: #ddd;
+    border: none;
+}
+
+
+.toolbar_treeview_text span {
+    float: left;
+}
+
+.toolbar_treeview_text p {
+    padding: 0px 25px;
+    margin-block: 5px;
+}
+
+.custom_kendo_tree ul>li:last-child::after {
+    height: 26px;
+}
+
+.k-treeview-md .k-treeview-leaf {
+    padding-block: 0px;
+    padding-inline: 8px;
+    font-size: 13px;
+
+    .k-treeview-leaf-text {
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+
+        .FCC_organization-caption {
+            margin-top: -2px;
+        }
+
+        .group-badge {
+            background-color: #e0eef9;
+            border-radius: 4px;
+            font-size: 8px !important;
+            padding: 0 5px;
+            text-transform: uppercase;
+            margin: 0 15px;
+            line-height: 20px;
+            color: #242424;
+            font-family: $Typo-Regular;
+        }
+    }
+}
+
+.blue_bg {
+    background: var(--primary-color);
+}
+
+.red_bg {
+    background: #b44532;
+}
+
+.pink_bg {
+    background: #e27589;
+}
+
+.ligreen_bg {
+    background: #c3db9f;
+}
+
+.liorange_bg {
+    background-color: #f6cf95;
+}
+
+.liblue_bg {
+    background-color: #779ecb;
+}
+
+.subdealer_bg {
+    background: #00b0a1;
+}
+
+.tree_icon {
+    width: 30px;
+    height: 24px;
+    line-height: 21px;
+    text-align: center;
+    float: left;
+    margin-right: 5px;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    padding: 2px;
+}
+
+.tree_icon img {
+    width: 14px;
+}
+
+.custom_kendo_tree .k-treeview .k-selected .tree_icon {
+    background-color: var(--primary-color);
+}
+
+.k-treeview-leaf:focus,
+.k-treeview-leaf.k-focus {
+    box-shadow: none;
+}
+
+.k-treeview-lines>li:nth-child(1).k-treeview-item:first-child:after {
+    height: 0;
+}
+
+.k-treeview-top,
+.k-treeview-mid,
+.k-treeview-bot {
+    display: block;
+}
+
+.k-treeview-md .k-checkbox-wrap {
+    padding-block: 3px;
+}
+
+.tree_icon.disableCheckbox {
+    opacity: 0.5
+}
+
+.k-treeview-top:has(.tree_icon.disableCheckbox) .k-checkbox-wrap .k-checkbox {
+    pointer-events: none;
+    background: #d1d1d1;
+    cursor: not-allowed;
+    border: none;
+}
+
+.highlighted {
+    background-color: var(--primary-color);
+    color: #fff;
+}

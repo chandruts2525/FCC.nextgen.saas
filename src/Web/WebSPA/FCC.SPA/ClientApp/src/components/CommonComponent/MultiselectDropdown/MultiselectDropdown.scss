@@ -1,0 +1,60 @@
+@import '../../../commonStyles.scss';
+
+.rmsc {
+    &.controlValidation {
+        .dropdown-container {
+            border: 1px solid var(--danger);
+        }
+    }
+
+    .dropdown-container {
+        background-color: #fff;
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+        height: 32px;
+        font-size: $rts-1;
+
+        .dropdown-heading {
+            height: 32px;
+
+            .gray {
+                content: "Select";
+            }
+        }
+
+        &:focus-within {
+            border-color: #d1d1d1 !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .dropdown-content {
+        .options {
+            max-height: 150px;
+
+            .select-item:hover {
+                background-color: var(--primary-color);
+
+                .item-renderer {
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .select-item.selected {
+                background-color: #fff;
+
+                .item-renderer {
+                    span {
+                        color: #000;
+                    }
+                }
+            }
+
+            .item-renderer {
+                align-items: normal;
+            }
+        }
+    }
+}

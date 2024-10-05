@@ -1,0 +1,29 @@
+{"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+	
+	"Sqlserver_name" :{
+			 "value": ""
+		},
+		"Sqlserver_administratorLogin" :{
+			 "value": ""
+		},
+		"Sqlserver_administratorLoginPassword" :{
+			 "value": ""
+		},
+		"Sqlserver_Databasename" :{
+			 "value": ""
+		},
+		"Sqlserver_skuname" :{
+			 "value": "Standard"
+		},
+		"Sqlserver_skutier" :{
+			 "value": "Standard"
+		},
+		"Sqlserver_skucapacity" :{
+			 "value": "10"
+		}
+		
+	}
+}

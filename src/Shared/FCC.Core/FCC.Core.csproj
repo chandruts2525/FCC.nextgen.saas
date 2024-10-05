@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Softura.Azure.Storage.Blobs" Version="2023.12.10.1" />
+    <PackageReference Include="Softura.EntityFrameworkCore" Version="2023.11.22.3" />
+    <PackageReference Include="Softura.EntityFrameworkCore.SqlServer" Version="2023.11.22.3" />
+    <PackageReference Include="Softura.Excel" Version="2023.12.10.1" />
+    <PackageReference Include="Softura.PDF" Version="2023.12.10.1" />
+  </ItemGroup>
+
+</Project>

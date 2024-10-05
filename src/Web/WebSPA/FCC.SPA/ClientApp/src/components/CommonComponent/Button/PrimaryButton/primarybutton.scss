@@ -1,0 +1,38 @@
+@import "../../../../commonStyles.scss";
+
+.primary-btn {
+  font-family: $Typo-SemiBold !important;
+  font-size: $rts-1;
+  border-radius: 4px;
+  padding: 5px 10px;
+  height: 32px;
+  white-space: nowrap;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  min-width:30px;
+  color:#fff !important;
+
+  &.is-disabled {
+    background-color: #d1d1d1;
+    border-color: #d1d1d1;
+    color:#242424 !important;
+    &:hover {
+      background-color: #d1d1d1;
+      border-color: #d1d1d1;
+      color:#242424 !important;
+    }
+  }
+  &:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: none!important;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.ms-Fabric--isFocusVisible .ms-Button:focus::after {
+  outline: none !important;
+}

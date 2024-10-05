@@ -1,0 +1,38 @@
+resources:
+  repositories:
+    - repository: Pipelines
+      type: git
+      name: EAG/Pipelines
+      ref: Develop
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
+variables:
+- name: buildConfiguration
+  value: 'Release'
+- name: BuildPlatform
+  value: 'any cpu'
+pool:
+  vmImage: 'windows-latest'
+  #demands:
+  #- Agent.Name -equals USSVSTSBUILD02
+trigger:
+  branches:
+    include:
+    - develop
+  batch: True
+extends:
+  template: CommonTemplate/reactbuildwithlegacy.yml@pipelines
+  parameters:
+    versionSpec: '16.x'
+    workingDir: 'src/Web/WebSPA/FCC.SPA/ClientApp'
+    customCommand: 'run build'
+    Sonarqube_serviceconnectionname: ''
+    Sonarqube_projectKey: ''
+    Sonarqube_ProjectName: ''
+    archivedisplayname: 'Archive FCC.SPA.UI'
+    archivefilecontent: 'src/Web/WebSPA/FCC.SPA/ClientApp/build'
+    archivefilename: 'FCC.SPA.UI'
+    solutionpath: ''
+    ProjectGuid: ''
+
+  

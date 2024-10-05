@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_8356" data-name="Rectangle 8356" width="41" height="30" rx="3" transform="translate(0 -0.026)" fill="#dfeafb"/>
+    </clipPath>
+    <clipPath id="clip-Placeholder_">
+      <rect width="48" height="48"/>
+    </clipPath>
+  </defs>
+  <g id="Placeholder_" data-name="Placeholder " clip-path="url(#clip-Placeholder_)">
+    <rect id="Rectangle_8355" data-name="Rectangle 8355" width="41" height="30" rx="3" transform="translate(3 9)" fill="#dfeafb"/>
+    <g id="Mask_Group_23" data-name="Mask Group 23" transform="translate(3 10.026)" clip-path="url(#clip-path)">
+      <path id="Path_19964" data-name="Path 19964" d="M1520.336,392.031l10.387-9.91s.9-.81,1.333-.823,1.358.919,1.358.919l17.705,17.27h-30.783Z" transform="translate(-1505.088 -367.131)" fill="#4975ef"/>
+      <path id="Path_19963" data-name="Path 19963" d="M1520.336,392.031l10.387-9.91s.9-.81,1.333-.823,1.358.919,1.358.919l17.705,17.27h-30.783Z" transform="translate(-1520.479 -369.513)" fill="#6093f2"/>
+    </g>
+    <circle id="Ellipse_436" data-name="Ellipse 436" cx="3.5" cy="3.5" r="3.5" transform="translate(10 13)" fill="#6093f2"/>
+  </g>
+</svg>

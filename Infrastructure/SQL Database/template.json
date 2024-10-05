@@ -1,0 +1,47 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+            "Sqlserver_name": {
+                "type": "String"
+            },
+            "SqlserverDatabasename": {
+                "type": "String"
+            },       
+            "Sqlserver_skuname":{
+                 "type": "String"
+            },
+            "Sqlserver_skutier": {
+                 "type": "String"
+            },
+            "Sqlserver_skucapacity": {
+                "type": "int"
+            }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers/databases",
+            "apiVersion": "2021-11-01-preview",
+            "name": "[concat(parameters('Sqlserver_name'), '/', parameters('Sqlserverdatabasename'))]",
+            "location": "",
+            "sku": {
+                "name": "[parameters('Sqlserver_skuname')]",
+                "tier": "[parameters('Sqlserver_skutier')]",
+                "capacity": "[parameters('Sqlserver_skucapacity')]"
+            },
+            "kind": "v12.0,user",
+            "properties": {
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": 268435456000, 
+                "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+                "zoneRedundant": false,
+                "readScale": "Disabled",
+                "requestedBackupStorageRedundancy": "",
+                "isLedgerOn": false
+            }
+        }
+    ],
+    "outputs": {}
+}

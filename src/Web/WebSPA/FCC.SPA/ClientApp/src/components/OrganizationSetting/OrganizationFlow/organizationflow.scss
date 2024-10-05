@@ -1,0 +1,535 @@
+.FCC_organization-settingWrapper {
+    display: flex;
+    overflow: auto;
+    gap: 40px;
+    margin-bottom: 15px;
+    margin-left: -40px;
+
+    .FCC_organization-NameMaster {
+        width: 270px;
+    }
+
+    .FCC_organization-setting {
+        background: #f1f7fd;
+        border: 1px solid #e4e6e7;
+        border-left: 3px solid #0a66be;
+        padding: 03px 15px 03px 10px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        height: 36px;
+
+        .FCC_organization-setting-name {
+            color: #000;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-right: 15px;
+        }
+
+        .lick_Context-dots {
+            margin-left: auto;
+        }
+
+        .FCC_dots {
+            &::after {
+                top: -4px;
+            }
+        }
+    }
+
+    .FCC_organization-optionlist {
+        ul {
+            margin: 0px;
+            padding: 10px;
+            border: 1px solid #e4e6e7;
+
+            li {
+                list-style-type: none;
+                display: flex;
+                font-size: 13px;
+                position: relative;
+                margin-right: 05px;
+                padding: 06px 0;
+
+                .FCC_organization-arrow.open {
+
+                    &.Yards,
+                    &.Department {
+                        &::after {
+                            width: 32px;
+                            right: -32px;
+                        }
+                    }
+
+                    &.Regions {
+                        &::after {
+                            width: 21px;
+                            right: -21px;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 17px;
+                        height: 1px;
+                        background: #ccc;
+                        position: absolute;
+                        right: -17px;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.FCC_dots {
+    position: relative;
+    height: auto;
+
+    &::after {
+        content: '...';
+        color: #0a66be;
+        font-size: 17px;
+        position: absolute;
+        top: 12px;
+        right: 0px;
+        cursor: pointer;
+        line-height: 0px;
+    }
+}
+
+.FCC_organization-caption {
+    background: #ccc;
+    height: 17px;
+    width: 12px;
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    margin: 0 8px 0 0;
+
+    &.red {
+        background: #d13438;
+    }
+
+    &.yellow {
+        background: #eaa300;
+    }
+
+    &.brown {
+        background: #8e562e;
+    }
+
+    &.purple {
+        background: #5c2e91;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 0;
+        height: 0;
+        border-top: 5px solid #fff;
+        border-left: 5px solid transparent;
+        content: '';
+    }
+}
+
+.FCC_organization-Context-dots {
+    margin-left: auto;
+
+    &.FCC_dots {
+        &::after {
+            top: 05px;
+        }
+    }
+}
+
+.FCC_organization-arrow {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #ebebeb;
+    position: absolute;
+    right: -25px;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    &::before {
+        content: '';
+        border: solid #222;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        margin: 07px 0 0 05px;
+        scale: 0.8;
+    }
+
+    &.open {
+        background: #0a66be;
+
+        &::before {
+            border-color: #fff;
+            transform: rotate(-223deg);
+            -webkit-transform: rotate(-223deg);
+            margin: 05px 0 0 08px;
+        }
+    }
+}
+
+.FCC_organization-contextMenu {
+    width: max-content;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+    margin: -45px 0 0 -100px;
+
+    ul {
+        margin: 0px;
+        padding: 10px 10px 0 10px;
+        border: 1px solid #e4e6e7;
+        border-radius: 02px;
+        box-shadow: 0px 0px 10px #ccc;
+
+        li {
+            display: flex;
+            font-size: 12px;
+            padding: 05px 0;
+        }
+    }
+}
+
+.FCC_organization-captionName {
+    cursor: pointer;
+}
+
+.FCC_organization-companyMaster {
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        position: relative;
+
+        &::before {
+            height: calc(100% - 74px);
+            width: 1px;
+            background: #ccc;
+            position: absolute;
+            top: 37px;
+            left: -15px;
+            content: '';
+        }
+    }
+
+    li {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+    }
+
+    .FCC_organization-companyBox {
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        border-left: 5px solid #d13438;
+        position: relative;
+        width: 270px;
+        margin: 0 0 10px 0;
+
+        &:has(.FCC_organization-arrow.open) {
+            background-color: #d134380d;
+            border-color: #d134380d;
+            border-left: 5px solid #d13438;
+        }
+
+        .FCC_organization-arrow.open {
+            background: #d13438;
+        }
+
+        &::before {
+            content: "";
+            width: 15px;
+            height: 1px;
+            background: #ccc;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: -19px;
+        }
+
+        .FCC_organization-companyNameWraper {
+            display: flex;
+        }
+
+        .FCC_organization-companyemail,
+        .FCC_organization-companyaddress {
+            font-size: 10px;
+            margin: 3px 0 0px 0;
+
+            img {
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+        }
+
+        .FCC_organization-arrow {
+            right: -10px;
+        }
+
+        .FCC_organization-arrow.open {
+            &::after {
+                content: "";
+                width: 17px;
+                height: 1px;
+                background: #ccc;
+                position: absolute;
+                right: -17px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.FCC_organization-companyChildMaster {
+    ul {
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+
+        &::before {
+            height: calc(100% - 39px);
+            width: 1px;
+            background: #ccc;
+            position: absolute;
+            top: 20px;
+            left: -15px;
+            content: '';
+        }
+    }
+
+    li {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.FCC_organization-companyChildBox {
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    position: relative;
+    width: 270px;
+    margin: 0 0 10px 0;
+    display: flex;
+
+    &.Department {
+        border-left: 5px solid #5c2e91;
+
+        &:has(.FCC_organization-arrow.open) {
+            background-color: #342e910d;
+            border-color: #342e910d;
+            border-left: 5px solid #5c2e91;
+        }
+
+        .FCC_organization-arrow.open {
+            background-color: #5c2e91;
+        }
+    }
+
+    &.Regions {
+        border-left: 5px solid #eaa300;
+
+        &:has(.FCC_organization-arrow.open) {
+            background-color: #e986000d;
+            border-color: #e986000d;
+            border-left: 5px solid #eaa300;
+        }
+
+        .FCC_organization-arrow.open {
+            background-color: #eaa300;
+        }
+    }
+
+    &.Yards {
+        border-left: 5px solid #8e562e;
+
+        &:has(.FCC_organization-arrow.open) {
+            background-color: #8e562e0d;
+            border-color: #8e562e0d;
+            border-left: 5px solid #8e562e;
+        }
+
+        .FCC_organization-arrow.open {
+            background-color: #8e562e;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 15px;
+        height: 1px;
+        background: #ccc;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: -19px;
+    }
+
+    .FCC_organization-Context-dots {
+        margin-right: 15px;
+    }
+
+    .FCC_organization-arrow {
+        right: -10px;
+    }
+
+    .FCC_organization-arrow.open {
+        &::after {
+            content: "";
+            width: 31px;
+            height: 1px;
+            background: #ccc;
+            position: absolute;
+            right: -31px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
+
+.FCC_organization-thirdChildmaster {
+    border: 1px solid #ccc;
+    padding: 05px;
+    height: max-content;
+    background-color: #fff;
+
+    &:has(.FCC_organization-thirdChildbox.Department) {
+        border-top: 5px solid #5c2e91;
+    }
+
+    &:has(.FCC_organization-thirdChildbox.Regions) {
+        border-top: 5px solid #eaa300;
+    }
+
+    &:has(.FCC_organization-thirdChildbox.Yards) {
+        border-top: 5px solid #8e562e;
+    }
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+
+        &:last-child {
+            .FCC_organization-thirdChildbox {
+                border-bottom: none;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.FCC_organization-thirdChildbox {
+    border-radius: 4px;
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    width: 270px;
+    border-bottom: 1px dashed #ccc;
+    display: flex;
+}
+
+.GroupCompanyWrapper {
+    ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+
+        &.GroupCompanyWrapperul {
+            &::after {
+                content: '';
+                position: absolute;
+                left: -10px;
+                height: 52%;
+                width: 1px;
+                top: 80px;
+                background: #ccc;
+            }
+        }
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0px;
+        position: relative;
+
+        &.GroupCompanyWrapperli {
+            margin-bottom: 15px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -10px;
+                height: 1px;
+                width: 30px;
+                top: 50%;
+                background: #ccc;
+            }
+        }
+    }
+}
+
+.groupcompnaybox {
+    border: 1px solid #0a66be;
+    background: #f1f7fd;
+    position: relative;
+    width: 270px;
+    border-radius: 02px;
+
+    .groupcompnayheader {
+        background: #0a66be;
+        color: #fff;
+        display: flex;
+        padding: 3px 10px;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        .FCC_organization-Context-dots {
+            &::after {
+                color: #fff;
+            }
+        }
+    }
+
+    .groupcompnaybody {
+        padding: 10px;
+    }
+}

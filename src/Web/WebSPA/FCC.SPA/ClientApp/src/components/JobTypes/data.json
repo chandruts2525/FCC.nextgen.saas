@@ -1,0 +1,35 @@
+[
+    {
+        "jobTypeId" : 1,
+        "jobTypeCode" : "AS1",
+        "jobTypeName":"Frost Law Delay",
+        "isActive":true,
+        "isDeleted":false,
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "jobTypeId" : 2,
+        "jobTypeCode" : "AS2",
+        "jobTypeName":"Frost Law Delay",
+        "isActive":true,
+        "isDeleted":false,
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    },
+    {
+        "jobTypeId" : 3,
+        "jobTypeCode" : "AS3",
+        "jobTypeName":"Frost Law Delay",
+        "isActive":true,
+        "isDeleted":false,
+        "createdBy":"John Almedia",
+        "createdDate":"16/09/2023",
+        "modifiedBy":"John Almedia",
+        "modifiedDate":"16/09/2023"
+    }
+]

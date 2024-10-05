@@ -1,0 +1,9 @@
+export const ImgExt = ['.JPG', '.PNG', '.JPEG'];
+export const docExt = ['.DOCX', '.DOC', '.DOT', '..DOCM'];
+export const excelExt = ['.XLSX', '.XLSM', '.XLSB', '.XLTX', '.XLS'];
+export const zippedExt = ['.ZIP', '.RAR'];
+export const textExt = ['.TXT', '.VTT', '.CSV'];
+export const pptExt = ['.PPTX', '.PPT', '.PPTM'];
+export const PDFExt = ['.pdf', '.PDF'];
+export const AudioExt = ['.mp3', '.mp4'];
+export const videoExt = ['.zmv'];

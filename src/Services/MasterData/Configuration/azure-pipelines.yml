@@ -1,0 +1,44 @@
+resources:
+  repositories:
+    - repository: Pipelines
+      type: git
+      name: EAG/Pipelines
+      ref: TemplateV2
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
+variables:
+- name: buildConfiguration
+  value: 'Release'
+- name: BuildPlatform
+  value: 'any cpu'
+- name: NUGET.PLUGIN.HANDSHAKE.TIMEOUT.IN.SECONDS
+  value: 30
+- name: NUGET.PLUGIN.REQUEST.TIMEOUT.IN.SECONDS
+  value: 30
+pool:
+  name: 'Default'
+  demands:
+  - VM
+trigger:
+  branches:
+    include:
+    - develop
+  paths:
+    include:
+    - src/Services/MasterData/Configuration
+    exclude:
+    - src/Services/MasterData/Configuration/azure-pipelines.yml
+  batch: True
+extends:
+  template: jobtemplates/coreapitemplate.yml@Pipelines
+  parameters:
+    runGitLeaks: 'false'
+    nugetAuthenticateServiceConnections: 'Softura_LIB'
+    dotnetrestoresolutionpath: 'src/Services/MasterData/Configuration/**/*.csproj'
+    dotnetPublishProjectPath: 'src/Services/MasterData/Configuration/**/*.csproj'
+    dotnetrestorevstsfeed: 'eead0206-6959-4e49-b193-074e4872ef5d/e15077aa-1401-474b-b7fe-9ed881bc7c8c'
+    sonarqubeName: ''
+    projectKey: ''
+    projectName: ''
+    cyclonedxsolutionpath: 'src/Services/MasterData/Configuration/**/*.csproj'
+    ProjectGuid: ''

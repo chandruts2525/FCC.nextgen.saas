@@ -1,0 +1,30 @@
+@import "../../../../commonStyles.scss";
+
+.secondary-btn {
+  font-family: $Typo-SemiBold !important;
+  font-size: $rts-1;
+  border-radius: 4px;
+  padding: 5px 10px;
+  height: 32px;
+  white-space: nowrap;
+  border-color: #d1d1d1;
+  color: #242424;
+  min-width:30px;
+  
+  &:hover,
+  &:active {
+    background-color: #fff;
+    color: #242424;
+    border-color: #d1d1d1;
+  }
+  &:focus {
+    box-shadow:  none;
+  }
+  &:disabled{
+    opacity: 0.3;
+  }
+  img {
+    height:14px;
+    width:14px;
+  }
+}

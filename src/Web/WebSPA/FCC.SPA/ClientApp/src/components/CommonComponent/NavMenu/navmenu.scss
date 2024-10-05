@@ -1,0 +1,154 @@
+@import '../../../commonStyles.scss';
+
+.ms-Nav {
+    overflow-y: hidden;
+}
+.ms-Nav.navigationBar {
+    .ms-Nav-groupContent {
+        margin-bottom:0;
+        .ms-Nav-navItems {
+            .ms-Nav-compositeLink {
+                margin: 5px 10px;
+                &.is-expanded {
+                    background-color: var(--primary-color);
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    margin:5px 0;
+                    .ms-Nav-link {
+                        color: #fff;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }   
+                    .ms-Nav-chevronButton {
+                        color: #fff;
+                    }    
+                    &:hover {
+                        background-color: var(--primary-color);
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        .ms-Nav-linkText {
+                            color:#fff
+                        } 
+                        .ms-Nav-chevronButton {
+                            color: #fff;
+                        } 
+                    }                
+                }
+                .ms-Nav-chevronButton {
+                    left:auto;
+                    right:5px;
+                    top:-6px;
+                }
+                .ms-Nav-link {
+                    color:#242424;
+                    padding: 0 10px;
+                    height:32px;
+                    &:hover {
+                        color:#242424;
+                    }
+                    .ms-Nav-linkText {
+                        margin: 0;
+                        font-family: $Typo-Regular;
+                        font-size: $rts-2;
+                    }
+                }
+                &:hover {
+                    background-color:rgba(10, 102, 190, 0.3);
+                    border-radius:4px;
+                    .ms-Nav-link {
+                        color: #fff;
+                        &:hover {
+                            color: #fff;
+                        }
+                    } 
+                    .ms-Nav-chevronButton {
+                        color:var(--primary-color)
+                    }    
+                    .ms-Nav-link {
+                        background-color: transparent;
+                    } 
+                    .ms-Nav-linkText {
+                        color:var(--primary-color)
+                    }
+                }
+            }
+        }
+    }
+}
+ul li ul li .ms-Nav-compositeLink {
+    &.is-expanded {
+        background-color:rgba(10, 102, 190, 0.3) !important;
+        border-radius:4px !important; 
+        margin:5px 10px !important;
+        .ms-Nav-link {
+            color: var(--primary-color) !important;
+            &:hover {
+                color: var(--primary-color) !important;
+            }
+        }   
+        .ms-Nav-linkText {
+            font-family: $Typo-SemiBold;
+        }
+        .ms-Nav-chevronButton {
+            color: var(--primary-color) !important;
+        }    
+        &:hover {
+            background-color:rgba(10, 102, 190, 0.3) !important;
+            border-radius:4px !important;
+            .ms-Nav-linkText {
+                color:var(--primary-color) !important
+            } 
+            .ms-Nav-chevronButton {
+                color: var(--primary-color) !important;
+            } 
+        }                
+    }
+}
+// .ms-Nav-compositeLink {
+//     &.is-expanded:has(.ms-Nav-compositeLink.is-expanded) {
+//         background-color: transparent;
+//         .ms-Nav-link {
+//             color: #242424;
+//             &:hover {
+//                 color: #242424;
+//             }
+//         }   
+//         .ms-Nav-chevronButton {
+//             color: #242424;
+//         }          
+//     }
+// }
+// ul li ul li, ul li ul li ul li, ul li ul li ul li ul li {
+//     .ms-Nav-compositeLink {
+//         .ms-Nav-link {
+//             color: #707070 !important;
+//             padding-left:30px !important;
+//             &:hover {
+//                 color: #fff !important;
+//             }
+//         } 
+//         &.is-expanded {
+//             .ms-Nav-link {
+//                 color: #fff !important;
+//                 &:hover {
+//                     color: #fff !important;
+//                 }
+//             } 
+//         }
+//     }    
+// }
+// ul li ul li ul li {
+//     .ms-Nav-compositeLink {
+//         .ms-Nav-link {
+//             padding-left:45px !important;
+//         } 
+//     }    
+// }
+// ul li ul li ul li u li{
+//     .ms-Nav-compositeLink {
+//         .ms-Nav-link {
+//             padding-left:60px !important;
+//         } 
+//     }    
+// }

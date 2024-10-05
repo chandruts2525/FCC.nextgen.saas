@@ -1,0 +1,76 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+       "storage_name": {
+				"type": "String"
+			},
+			"storage_kind": {
+				"type": "String"
+			},
+			"storage_skuname": {
+				"type": "String"
+			},
+			"storage_skutier": {
+				"type": "String"
+			},
+			"blobname" :{
+				"type": "String"
+			}
+	},
+    "functions": [],
+    "variables": {
+	"storageResourceId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storage_name'))]"
+	},
+    "resources": [
+			{
+				"type": "Microsoft.Storage/storageAccounts",
+				"name": "[parameters('storage_name')]",            
+				"apiVersion": "2019-04-01",            
+				"location": "[resourceGroup().location]",
+				"kind": "StorageV2",
+				"properties":{
+					"largeFileSharesState": "Disabled",
+					"networkAcls": {
+						"bypass": "AzureServices",
+						"virtualNetworkRules": [],
+						"ipRules": [],
+						"defaultAction": "Allow"
+					},
+					"supportsHttpsTrafficOnly": true,
+					"minimumTlsVersion": "TLS1_2",
+					"allowBlobPublicAccess": false,
+					"allowSharedKeyAccess": true,
+					"isHnsEnabled": false,
+					"encryption": {
+						"services": {
+							"file": {
+								"keyType": "Account",
+								"enabled": true
+							},
+							"blob": {
+								"keyType": "Account",
+								"enabled": true
+							}
+						},
+						"keySource": "Microsoft.Storage"
+					},
+					"accessTier": "cool"
+				},
+					"sku": {
+					"name": "[parameters('storage_skuname')]",
+					"tier": "[parameters('storage_skutier')]"
+				}
+		},
+        
+		{
+		  "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+		  "apiVersion": "2021-08-01",
+		  "name": "[format('{0}/default/{1}', parameters('storage_name'), parameters('blobname'))]",
+		  "dependsOn": [
+			"[resourceId('Microsoft.Storage/storageAccounts', parameters('storage_name'))]"
+		  ]
+		}
+		 
+]
+}

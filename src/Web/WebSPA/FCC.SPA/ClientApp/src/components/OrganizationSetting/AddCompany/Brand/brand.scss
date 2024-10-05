@@ -1,0 +1,32 @@
+@import "../../../../commonStyles.scss";
+
+.brand-tab-container {
+
+    .footer-container {
+        padding: 10px 15px !important;
+    }
+
+    .footer-container,
+    .branding-container {
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+        padding: 10px 15px 0 15px;
+
+        .sub-text {
+            font-weight: normal;
+            font-size: $rts-1;
+            margin-bottom: 10px;
+            display: block;
+            color: #666;
+        }
+
+        .image-uploader-validators {
+            font-size: 11px;
+            list-style: none;
+            font-family: 'Onest-Regular';
+            font-weight: normal;
+            padding: 0;
+            color: #666;
+        }
+    }
+}

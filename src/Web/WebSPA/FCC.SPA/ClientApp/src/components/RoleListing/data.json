@@ -1,0 +1,97 @@
+[
+    {
+        "id" : 1,
+        "RoleName" : "Administrator",
+        "AssignedUser":10
+    },
+    {
+        "id" : 2,
+        "RoleName" : "Administrator 2",
+        "AssignedUser":10
+    },
+    {
+        "id" : 3,
+        "RoleName" : "Administrator 3",
+        "AssignedUser":10
+    },
+    {
+        "id" : 4,
+        "RoleName" : "Administrator 4",
+        "AssignedUser":10
+    },
+    {
+        "id" : 5,
+        "RoleName" : "Administrator 5",
+        "AssignedUser":10
+    },
+    {
+        "id" : 6,
+        "RoleName" : "Administrator 6",
+        "AssignedUser":10
+    },
+    {
+        "id" : 7,
+        "RoleName" : "Administrator 7",
+        "AssignedUser":10
+    },
+    {
+        "id" : 8,
+        "RoleName" : "Administrator 8",
+        "AssignedUser":10
+    },
+    {
+        "id" : 9,
+        "RoleName" : "Administrator 9",
+        "AssignedUser":10
+    },
+    {
+        "id" : 10,
+        "RoleName" : "Administrator 10",
+        "AssignedUser":10
+    },
+    {
+        "id" : 11,
+        "RoleName" : "Administrator 11",
+        "AssignedUser":10
+    },
+    {
+        "id" : 12,
+        "RoleName" : "Administrator 12",
+        "AssignedUser":10
+    },
+    {
+        "id" : 13,
+        "RoleName" : "Administrator 13",
+        "AssignedUser":10
+    },
+    {
+        "id" : 14,
+        "RoleName" : "Administrator 14",
+        "AssignedUser":10
+    },
+    {
+        "id" : 15,
+        "RoleName" : "Administrator 15",
+        "AssignedUser":10
+    },
+    {
+        "id" : 16,
+        "RoleName" : "Administrator 16",
+        "AssignedUser":10
+    },
+    {
+        "id" : 17,
+        "RoleName" : "Administrator 17",
+        "AssignedUser":10
+    },
+    {
+        "id" : 18,
+        "RoleName" : "Administrator 18",
+        "AssignedUser":10
+    },
+    {
+        "id" : 19,
+        "RoleName" : "Administrator 19",
+        "AssignedUser":10
+    }
+]

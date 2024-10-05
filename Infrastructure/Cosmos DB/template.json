@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+       "cosmosDbAccountname": {
+            "type": "String"
+		},
+		 "CosmosDbname": {
+            "type": "String"
+		},
+        "databaseAccountOfferType": {
+            "type": "String"	 
+        },
+        "partitionkeypath":{
+             "type": "String"
+        } 
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('cosmosDbAccountname')]",
+           "type": "Microsoft.DocumentDB/databaseAccounts",
+           "apiVersion": "2021-05-15",
+           "location": "[resourceGroup().location]",
+           "tags": {},
+           "kind": "GlobalDocumentDB",
+           "identity": {
+                "type": "None"
+            },
+           "properties": {
+               "consistencyPolicy": {
+                   "defaultConsistencyLevel": "session",
+                   "maxStalenessPrefix": 1,
+                   "maxIntervalInSeconds": 5
+               },
+               "locations": [
+                   {
+                       "locationName": "[resourcegroup().location]",
+                       "failoverPriority": 0
+                   }
+               ],
+               "enableFreeTier": false,
+               "databaseAccountOfferType": "[parameters('databaseAccountOfferType')]",
+               "enableAutomaticFailover": true,
+               "capabilities": []
+           }
+    },
+    {
+            "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
+            "apiVersion": "2022-02-15-preview",
+            "name": "[concat(parameters('cosmosDbAccountname'), '/',parameters('CosmosDbname'))]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosDbAccountname'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "[parameters('CosmosDbname')]"
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}

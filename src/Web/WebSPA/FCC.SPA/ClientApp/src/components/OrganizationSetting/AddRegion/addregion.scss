@@ -1,0 +1,34 @@
+@import "../../../commonStyles.scss";
+
+.add-region-container {
+    .searchbox {
+        width: 100%;
+        float: none;
+    }
+
+    .yard-list-block {
+        list-style: none;
+        padding: 5px 15px;
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+        max-height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        li {
+            display: flex;
+            border-bottom: 1px solid #d1d1d1;
+            padding: 10px 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            span {
+                font-family: $Typo-SemiBold;
+                margin-left: 10px;
+                font-size: $rts-3;
+            }
+        }
+    }
+}

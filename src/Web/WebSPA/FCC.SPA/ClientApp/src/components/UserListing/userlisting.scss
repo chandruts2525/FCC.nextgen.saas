@@ -1,0 +1,16 @@
+@import '../../commonStyles.scss';
+
+.user-listing-container {
+    .top-section {
+        min-height:32px;
+    }
+    .searchbox {
+        width:440px;
+        @include mobiledevices {
+            width:100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }  
+}

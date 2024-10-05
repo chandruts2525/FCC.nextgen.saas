@@ -1,0 +1,19 @@
+@import "../../../commonStyles.scss";
+
+.required {
+  color: var(--danger);
+  font-family: $Typo-Regular;
+  font-size: 18px;
+  margin: -3px 0 -6px 3px;
+}
+
+.label {
+  font-family: $Typo-Regular;
+  margin-bottom: 5px;
+  font-size: $rts-1;
+  display: flex;
+  text-transform: none;
+  border: none;
+  color: #242424;
+  font-weight: normal;
+}

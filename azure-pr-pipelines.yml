@@ -1,0 +1,79 @@
+resources:
+  repositories:
+    - repository: Pipelines
+      type: git
+      name: EAG/Pipelines
+      ref: TemplateV2
+trigger:
+  branches:
+    include:
+      - develop
+      - Nila_OldCode
+  paths:
+    exclude:
+      - src/Services/azure-pipelines.yml
+      - src/Services/Administration/IAC/azure-pipelines.yml
+      - src/Web/WebSPA/FCC.SPA/azure-pipelines.yml
+      - src/Web/WebSPA/FCC.SPA/azure-pipelines.yml
+      - azure-pr-pipelines.yml
+
+variables:
+- name: NUGET.PLUGIN.HANDSHAKE.TIMEOUT.IN.SECONDS
+  value: 30
+- name: NUGET.PLUGIN.REQUEST.TIMEOUT.IN.SECONDS
+  value: 30
+- name: BuildPlatform
+  value: 'any cpu'
+ 
+  
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+pool:
+  name: 'Default'
+ 
+jobs:
+- job:
+  steps:
+  - task: UseDotNet@2
+    displayName: 'DotNet 6.x'
+    inputs:
+      packageType: 'sdk'
+      version: 6.0.x
+    condition: eq(variables['Agent.Name'], 'USSVSTSBUILD02')
+  - task: NuGetToolInstaller@1
+    displayName: 'NuGet Install'
+    inputs:
+     versionSpec: 6.x
+  
+  - template: /templates/nuget/nugetauthenticate.yml@Pipelines
+    parameters:
+      nugetAuthenticateServiceConnections: 'Softura_LIB'
+
+
+  - template: /templates/dotnet/dotnetrestorewithconfig.yml@Pipelines
+    parameters:
+      dotnetRestoreSolutionPath: 'src/Services/**/*.csproj'      
+      dotnetRestoreExternalFeed: 'Softura_LIB'
+      dotnetNugetConfigPath: nuget.config
+
+  - task: SonarQubePrepare@5
+    inputs:
+      SonarQube: 'SonarQubeConnection'
+      scannerMode: 'MSBuild'
+      projectKey: 'FCC.nextgen.saas'
+      projectName: 'FCC nextgen saas'
+      extraProperties: |
+        sonar.qualitygate.wait=true
+        sonar.qualitygate.timeout=300
+    condition: and(succeeded(), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/develop'))
+
+    enabled: false
+  - template: /templates/dotnet/dotnetpublish.yml@Pipelines
+    parameters:
+      dotnetPublishProjectPath: |
+       src/Services/**/*.csproj
+       src/Services/Administration/IAC/IAC.Api/IAC.Api.csproj
+      dotnetPublishArguments: '--configuration release --output $(build.artifactstagingdirectory) '
+  - task: SonarQubeAnalyze@5
+    displayName: Run Code Analysis
+    condition: and(succeeded(), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/develop'))
+    enabled: false

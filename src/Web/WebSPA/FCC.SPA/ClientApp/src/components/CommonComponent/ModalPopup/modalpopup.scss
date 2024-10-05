@@ -1,0 +1,208 @@
+@import "../../../CommonStyles.scss";
+
+.modal-open {
+  overflow-y: hidden;
+}
+
+.modalPopupMasterContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 105555;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+
+  .dropShadowcontainer {
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-color: #242424;
+    position: fixed;
+    min-height: 200px;
+    z-index: 99;
+    border: 1px solid #d1d1d1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    pointer-events: all;
+  }
+
+  .modalPopupContainer {
+    position: relative;
+    background-color: #fff;
+    width: auto;
+    z-index: 999;
+    border: 0;
+    margin: 1.75rem auto;
+    border-radius: 10px;
+
+    &.large {
+      width: 925px;
+
+      .modalBodyContainer {
+        width: 925px;
+      }
+    }
+
+    &.small {
+		  top: 20%;
+      width: 335px;
+    }
+
+    &.medium {
+		  top: 10%;
+      width: 535px;
+
+      @include mobiledevices {
+        width:90%;
+      }
+    }
+
+    &.medium-large {
+		  top: 10%;
+      width: 750px;
+
+      @include mobiledevices {
+        width:90%;
+      }
+    }
+
+    .modalPopupHeader {
+      background-color: var(--primary-color);
+      float: left;
+      width: 100%;
+      height: 40px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .modalTitle {
+      color: #fff;
+      font-size: $rts-1;
+      margin-top: 10px;
+      margin-left: 15px;
+      float: left;
+      font-family: $Typo-SemiBold;
+    }
+
+    .modalCloseIcon {
+      color: #fff;
+      margin-top: 8px;
+      margin-right: 15px;
+      float: right;
+      cursor: pointer;
+
+      img {
+        cursor: pointer;
+        width: 13px;
+        height: 13px;
+      }
+    }
+
+    .modalPopupBody {
+      box-sizing: border-box;
+      float: left;
+      width: 100%;
+    }
+
+    .modalBodyContainer {
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      padding: 15px;
+      margin-top: -5px;
+      background-color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .modalPopupFooter {
+      background-color: #fff;
+      float: left;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      .footerButton {
+        float: right;
+      }
+    }
+  }
+}
+
+@include smalldesktop {
+  .modalPopupMasterContainer {
+    .modalPopupContainer {
+      &.large {
+        width: 800px ;
+        .modalBodyContainer {
+          width: 800px ;
+        }
+      }
+
+	  &.small {
+        width: 335px;
+        .modalBodyContainer {
+          width: 335px ;
+        }
+      }
+    }
+  }
+}
+
+@include device1000 {
+  .modalPopupMasterContainer {
+      .modalPopupContainer {
+        &.large {
+          width: 745px ;
+          .modalBodyContainer {
+            width: 745px ;
+          }
+        }
+    }
+  }
+}
+
+@include tablet {
+  .modalPopupMasterContainer {
+    .modalPopupContainer {
+      &.large {
+        width: 600px ;
+        .modalBodyContainer {
+          width: 600px ;
+        }
+      }
+
+	  &.small {
+        width: 335px;
+        .modalBodyContainer {
+          width: 335px ;
+        }
+      }
+    }
+  }
+}
+
+@include mobiledevices {
+  .modalPopupMasterContainer {
+    .modalPopupContainer {
+      &.large {
+        width: 94% ;
+        .modalBodyContainer {
+          width: 100% ;
+        }
+      }
+
+      &.small {
+        width: 94% ;
+        .modalBodyContainer {
+          width: 100% ;
+        }
+      }
+    }
+  }
+}

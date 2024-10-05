@@ -1,0 +1,39 @@
+@import "../../../commonStyles.scss";
+
+.form-input {
+
+  .ms-TextField-fieldGroup {
+    height: 32px !important;
+    border: none !important;
+    border-radius: 4px;
+
+    input[readonly] {
+      background-color: #eee;
+      border-color: #eee;
+    }
+
+    &::after {
+      border: none !important;
+    }
+
+    .ms-TextField-field {
+      font-size: $rts-1;
+      color: #000;
+      border: 1px solid #d1d1d1 !important;
+      border-radius: 4px;
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        border: 1px solid #d1d1d1 !important;
+      }
+
+    }
+  }
+}
+
+.form-input.error-filed .ms-TextField-fieldGroup .ms-TextField-field {
+  border: 1px solid var(--danger) !important;
+}

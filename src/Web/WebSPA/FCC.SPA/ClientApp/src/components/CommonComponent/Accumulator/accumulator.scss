@@ -1,0 +1,159 @@
+@import '../../../commonStyles.scss';
+
+
+.accumulator-container {
+    h4 {
+        font-size: $rts-1;
+        font-weight: 400;
+        margin-top:0;
+    }
+    .k-listbox .k-list-scroller {
+        width: 98%;
+    }
+    .k-listbox.k-listbox-actions-right {
+        @include mobiledevices {
+            position: relative;
+
+            .k-listbox-actions {
+                position: absolute;
+                flex-direction: row;
+                bottom: -38px;
+                left: 100px;
+            }
+        }
+    }
+    .k-listbox.k-listbox-actions-left .k-listbox-actions, .k-listbox.k-listbox-actions-right .k-listbox-actions {
+        margin-top: 60px;
+
+        button {
+            background-color: var(--primary-color);
+            color:#fff;
+            &:hover {
+                background-color: var(--primary-color);
+                color:#fff;
+            }
+            &:disabled {
+                background-color: #ebebeb;
+                color:#242424;
+            }
+            &:first-child {
+                order:2;
+            }
+            &:nth-child(2) {
+                order:3;
+            }
+            &:nth-child(3) {
+                order:1;
+            }
+            &:last-child {
+                order:4;
+            }
+        }
+        .k-svg-i-caret-alt-left {
+            &::before {
+                content: "\f104" !important;
+                font-family: 'FontAwesome',sans-serif;
+                font-size: $rts-3;
+                @include mobiledevices {
+                    transform:rotate(90deg)
+                }
+            }
+            svg {
+                display: none;
+            }
+        }
+        .k-svg-i-caret-alt-right {
+            &::before {
+                content: "\f105" !important;
+                font-family: 'FontAwesome',sans-serif;
+                font-size: $rts-3;
+                @include mobiledevices {
+                    transform:rotate(90deg)
+                }
+            }
+            svg {
+                display: none;
+            }
+        }
+        .k-svg-i-caret-double-alt-right {
+            &::before {
+                content: "\f101" !important;
+                font-family: 'FontAwesome',sans-serif;
+                font-size: $rts-3;
+                @include mobiledevices {
+                    transform:rotate(90deg)
+                }
+            }
+            svg {
+                display: none;
+            }
+        }
+        .k-svg-i-caret-double-alt-left {
+            &::before {
+                content: "\f100" !important;
+                font-family: 'FontAwesome',sans-serif;
+                font-size: $rts-3;
+                margin-top: -3px;
+                @include mobiledevices {
+                    transform:rotate(90deg)
+                }
+            }
+            svg {
+                display: none;
+            }
+        }
+    }
+    .checkboxContainer{
+        display: flex;
+        .checkboxDiv {
+            margin-top:2px;
+        }     
+    }
+    
+    .user-inactive {
+        .header-txt, .subheading-txt {
+            color:#b3b3b3
+        }
+        .k-checkbox {
+            border-color:#b3b3b3;
+            &:checked, &.k-checked {
+                border-color: #b3b3b3;
+                color: #fff;
+                background-color:#b3b3b3;
+            }
+        }
+    }
+    .header-txt {
+        padding-top: 3px;
+        font-family: $Typo-Regular;
+        margin-left:10px;
+        font-size: $rts-2;
+    }
+    .subheading-txt {        
+        margin-left: 10px;
+        display: block;
+        font-size: 11px;
+    }
+    .k-list-item.k-selected:hover, .k-selected.k-list-optionlabel:hover, .k-list-item.k-selected.k-hover, .k-selected.k-hover.k-list-optionlabel {
+        color: #242424;
+        background-color: #fff;
+    }
+    .k-list-item.k-selected, .k-selected.k-list-optionlabel {
+        color: #242424;
+        background-color: #fff;
+    }
+    .k-checkbox {
+        border-color:#707070;
+        border-radius: 0;
+        &:checked, &.k-checked {
+            border-color: var(--primary-color);
+            color: #fff;
+            background-color: var(--primary-color);
+        }
+    }
+    .k-list-md .k-list-item, .k-list-md .k-list-optionlabel {
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        margin: 0 10px;
+    }
+}

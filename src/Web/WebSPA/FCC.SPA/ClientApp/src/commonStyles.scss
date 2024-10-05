@@ -1,0 +1,120 @@
+$Typo-SemiBold: 'Onest-SemiBold', sans-serif;
+$Typo-Bold: 'Onest-Bold', sans-serif;
+$Typo-Regular: 'Onest-Regular', sans-serif;
+$rts-1: 0.8571rem; //12px
+$rts-2: 0.9285rem; 
+$rts-3: 1rem;
+$rts-4: 1.0714rem;
+$rts-5: 1.1428rem;
+$rts-6: 1.2142rem;
+$rts-7: 1.2857rem;
+$rts-8: 1.3571rem;
+$heading-1: 1.4285rem; //20
+$heading-2: 1.5714rem; //22
+$heading-3: 1.7142rem;
+$heading-4: 1.8571rem;
+$heading-5: 2rem;
+$heading-6: 2.1428rem;
+
+
+%commonstyles {
+  p {
+    margin: 0;
+  }
+}
+
+@mixin largedesktop1900 {
+  @media only screen and (min-width: 1900px) {
+    @content;
+  }
+}
+@mixin mindesktop1536 {
+  @media only screen and (min-width: 1536px) {
+    @content;
+  }
+}
+@mixin desktop1536 {
+  @media only screen and (max-width: 1536px) {
+    @content;
+  }
+}
+
+@mixin desktop1440 {
+  @media only screen and (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin desktop1366 {
+  @media only screen and (max-width: 1367px) {
+    @content;
+  }
+}
+
+@mixin desktop1280 {
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin desktop1200 {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin largedesktop1500 {
+  @media only screen and (min-width: 1500px) {
+    @content;
+  }
+}
+@mixin desktop1000 {
+  @media only screen and (min-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin desktop1100 {
+  @media only screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin smalldesktop {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin device1000 {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tabletMin {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin tabletMax {
+  @media only screen and (min-width: 767px) {
+    @content;
+  }
+}
+@mixin mobileMinStart {
+  @media only screen and (min-width: 667px) {
+    @content;
+  }
+}
+
+@mixin mobiledevices {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}

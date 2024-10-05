@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+	    "asp_name": {
+            "type": "String"
+        },
+		"asp_skuName": {
+            "type": "String"
+        },
+		"asp_skuTier": {
+            "type": "String"
+        },
+		"asp_skuSize": {
+            "type": "String"
+        },
+		"asp_skuFamily": {
+            "type": "String"
+        },
+		"asp_skuCapacity": {
+            "type": "String"
+        },
+		"asp_kind": {
+            "type": "String"
+	}
+},
+
+    "resources": [
+           {
+            "apiVersion": "2019-08-01",
+            "name": "[parameters('asp_name')]",
+            "type": "Microsoft.Web/serverfarms",
+            "location": "[resourceGroup().location]",
+            "kind": "[parameters('asp_kind')]",
+            "properties": {
+                "perSiteScaling": false,
+                "elasticScaleEnabled": false,
+                "maximumElasticWorkerCount": 1,
+                "isSpot": false,
+                "reserved": false,
+                "isXenon": false,
+                "hyperV": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0,
+                "zoneRedundant": false
+            },
+            
+             "identity": {
+             "type": "none"
+                },
+            "sku": {
+                "tier": "[parameters('asp_skuTier')]",
+                "name": "[parameters('asp_skuName')]",
+                "size": "[parameters('asp_skuSize')]",
+                "family": "[parameters('asp_skuFamily')]",
+                "capacity": "[parameters('asp_skuCapacity')]"
+            }
+		   }
+     ]       
+}

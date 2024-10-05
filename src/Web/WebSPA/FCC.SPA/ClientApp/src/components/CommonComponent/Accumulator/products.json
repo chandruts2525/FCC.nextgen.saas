@@ -1,0 +1,72 @@
+[{
+
+        "isActive": true,
+        "isDeleted": true,
+        "isLocked": true,
+        "createdDate": "2023-11-09T06:18:38.107Z",
+        "modifiedBy": "Lorem",
+        "modifiedDate": "2023-11-09T06:18:38.107Z",
+        "userId": 7,
+        "roleId": "0",
+        "createdBy": "Lorem",
+        "userName": "Adam kote",
+        "role": "Admin",
+        "Discontinued" : true
+},
+{
+    "isActive": true,
+    "isDeleted": true,
+    "isLocked": true,
+    "createdDate": "2023-11-09T06:18:38.107Z",
+    "modifiedBy": "Lorem1",
+    "modifiedDate": "2023-11-09T06:18:38.107Z",
+    "userId": 1,
+    "roleId": "1",
+    "createdBy": "Lorem1",
+    "userName": "Micheal",
+    "role": "FCC Admin",
+    "Discontinued" : false
+},
+{
+    "isActive": false,
+    "isDeleted": true,
+    "isLocked": true,
+    "createdDate": "2023-11-09T06:18:38.107Z",
+    "modifiedBy": "Lorem2",
+    "modifiedDate": "2023-11-09T06:18:38.107Z",
+    "userId": 2,
+    "roleId": "2",
+    "createdBy": "Lorem2",
+    "userName": "john",
+    "role": "Administrator",
+    "Discontinued" : true
+},
+{
+    "isActive": false,
+    "isDeleted": true,
+    "isLocked": true,
+    "createdDate": "2023-11-09T06:18:38.107Z",
+    "modifiedBy": "Lorem3",
+    "modifiedDate": "2023-11-09T06:18:38.107Z",
+    "userId": 2,
+    "roleId": "2",
+    "createdBy": "Lorem2",
+    "userName": "john",
+    "role": "Administrator",
+    "Discontinued" : false
+},
+{
+    "isActive": false,
+    "isDeleted": true,
+    "isLocked": true,
+    "createdDate": "2023-11-09T06:18:38.107Z",
+    "modifiedBy": "Lorem3",
+    "modifiedDate": "2023-11-09T06:18:38.107Z",
+    "userId": 3,
+    "roleId": "3",
+    "createdBy": "Lorem3",
+    "userName": "mark",
+    "role": "CA",
+    "Discontinued" : false
+}
+]

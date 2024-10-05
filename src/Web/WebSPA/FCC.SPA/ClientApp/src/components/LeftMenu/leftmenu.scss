@@ -1,0 +1,134 @@
+@import '../../commonStyles.scss';
+
+.left-panel-container {
+  text-align: center;
+  font-size: 10px;
+  color: #707070;
+  height: 94vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include desktop1366 {
+    height: 90vh;
+  }
+
+  @include smalldesktop {
+    height: 89vh;
+  }
+
+  @include tablet {
+    height: 66vh;
+  }
+
+  @include tabletMin {
+    height: 100vh;
+    font-size: $rts-3;
+    overflow-y: auto;
+  }
+
+  .mobile-arrow-icon {
+    margin-top: 5px;
+  }
+
+  .mobile-close-menu {
+    display: flex !important;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    p {
+      font-family: $Typo-SemiBold;
+      font-size: $rts-5;
+      color: #242424;
+    }
+  }
+
+  .search-block-nav-mobile {
+    .searchbox {
+      margin-bottom: 15px;
+
+      @include tabletMin {
+        width: 100%;
+      }
+    }
+  }
+
+  .collapsed-menu-list-block {
+    list-style: none;
+    padding: 0;
+    margin: 10px auto;
+
+    li {
+      margin-bottom: 7px;
+      padding: 5px 0;
+      color: #000;
+
+      @include tabletMin {
+        display: flex;
+        padding: 5px 20px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+
+        .text-block {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        p {
+          margin: 6px 0 0 15px;
+        }
+      }
+
+      @include mobiledevices {
+        &:nth-child(10) {
+          position: absolute;
+          bottom: 40px;
+        }
+
+        &:last-child {
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      @include tabletMax {
+        &.active {
+          position: relative;
+          background-color: #f0f0f0;
+          color: var(--primary-color);
+          cursor: pointer;
+
+          &::before {
+            width: 5%;
+            height: 53px;
+            background: var(--primary-color);
+          }
+
+          &::after,
+          &::before {
+            display: block;
+            position: absolute;
+            left: 0;
+            content: '';
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .profile-block {
+    height: 36px;
+    width: 36px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    line-height: 36px;
+    text-align: center;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: auto;
+    justify-content: center;
+  }
+}

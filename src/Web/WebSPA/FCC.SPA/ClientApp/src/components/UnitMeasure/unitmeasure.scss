@@ -1,0 +1,19 @@
+@import "../../commonStyles.scss";
+
+.unit-measure-container {
+  .top-section {
+    min-height: 32px;
+  }
+  .searchbox {
+    width: 315px;
+    @include mobiledevices {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  .text-right {
+    text-align: right;
+  }
+}

@@ -1,0 +1,221 @@
+@import "../../../commonStyles.scss";
+
+.search-dropdown {
+  &.error-filed {
+
+    .css-yk16xz-control,
+    .css-1mq9ilk-control,
+    .css-il4vzj-control {
+      border-color: var(--danger) !important;
+    }
+
+    .css-1xc3v61-indicatorContainer {
+      color: var(--danger);
+    }
+  }
+
+  .css-wsp0cs-MultiValueGeneric {
+    padding: 0 0 0 6px !important
+  }
+
+  .css-yk16xz-control,
+  .css-1mq9ilk-control,
+  .css-il4vzj-control {
+    border-color: #d1d1d1 !important;
+    border-radius: 4px;
+    font-size: $rts-1;
+    line-height: 22px;
+    min-height: 32px !important;
+    box-shadow: none !important;
+
+    .css-1okebmr-indicatorSeparator,
+    .css-1u9des2-indicatorSeparator {
+      display: none;
+    }
+
+    .css-1xc3v61-indicatorContainer,
+    .css-1fdsijx-ValueContainer {
+      padding: 0 5px;
+    }
+
+    .css-1pahdxg-control {
+      border-color: #d1d1d1 !important;
+      box-shadow: none;
+      max-height: 32px !important;
+
+      &:hover,
+      &:focus {
+        border-color: #d1d1d1 !important;
+      }
+    }
+
+    .css-tlfecz-indicatorContainer,
+    .css-1gtu0rj-indicatorContainer,
+    .css-15lsz6c-indicatorContainer {
+      padding: 0 5px;
+    }
+  }
+
+  .css-12a83d4-MultiValueRemove:hover {
+    background-color: #d1d1d1;
+    color: #616161;
+  }
+
+  .css-yk16xz-control,
+  .css-1pahdxg-control {
+    max-height: 32px !important;
+    height: 32px !important;
+    min-height: 30px !important;
+  }
+
+  .css-1pahdxg-control {
+    border-color: #d1d1d1 !important;
+    box-shadow: none !important;
+    transition: none !important;
+    font-size: $rts-1 !important;
+
+    &:hover,
+    &:focus {
+      border-color: #d1d1d1 !important;
+    }
+  }
+
+  .controlValidation {
+
+    .css-1pahdxg-control,
+    .css-lvotut-control {
+      border-color: #ff4444 !important;
+      box-shadow: none;
+      min-height: 30px !important;
+
+      &:hover,
+      &:focus {
+        border-color: #ff4444 !important;
+      }
+    }
+
+    .css-yk16xz-control {
+      border: 1px solid #ff4444 !important;
+    }
+  }
+
+  .css-1okebmr-indicatorSeparator {
+    display: none;
+  }
+
+  .react-select__option {
+    font-size: 12px !important;
+  }
+
+  .css-4ljt47-MenuList {
+    padding: 0 !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    line-height: 24px;
+    z-index: 99999999 !important;
+  }
+
+  .css-119lnmp-option,
+  .css-1gf5heo-option {
+    padding: 4px 8px !important;
+
+    &:active {
+      background-color: #fff !important;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .css-yt9ioa-option,
+  .css-1n7v3ny-option,
+  .css-k9rrwc-option,
+  .css-1ddhpif-option {
+    font-size: $rts-1;
+    // border-bottom: 1px solid #d1d1d1;
+    border-bottom: none;
+    padding: 6px 12px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+  }
+
+  .css-1ddhpif-option {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+
+  .css-1n6sfyn-MenuList {
+    padding: 0;
+  }
+
+  .css-1nmdiq5-menu {
+    margin-top: 0;
+    z-index: 9;
+  }
+
+  .css-26l3qy-menu {
+    margin-top: 0 !important;
+    border: 1px solid #d1d1d1 !important;
+    border-top: none !important;
+    z-index: 99999999 !important;
+  }
+
+  .search-dropdown .css-19pd8rf-control {
+    box-shadow: none !important;
+    border-color: #d1d1d1 !important;
+    min-height: 32px;
+    height: 32px;
+    border: 1px solid #d1d1d1 !important;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .css-1ftyyho-control,
+  .css-lvotut-control,
+  .css-12a5ptk-control {
+    min-height: 32px !important;
+    height: 32px;
+  }
+
+  .css-1wa3eu0-placeholder {
+    color: #242424 !important;
+    // opacity: 0.4;
+  }
+
+  .css-119lnmp-option {
+    line-height: 16px;
+  }
+
+  .css-1jqq78o-placeholder {
+    color: #d1d1d1;
+    font-weight: normal;
+    font-family: $Typo-Regular;
+    font-size: $rts-1;
+  }
+
+  .css-uexu4m-control {
+    min-height: 32px !important;
+    border-color: #d1d1d1 !important;
+
+    .css-1xc3v61-indicatorContainer,
+    .css-1fdsijx-ValueContainer {
+      padding: 0 5px !important
+    }
+
+    .css-894a34-indicatorSeparator {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../../commonStyles.scss';
+
+.add-user-container {
+    .userdetails {
+        border: 1px solid #f0f0f0;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .nested-heading-txt {
+        font-family: $Typo-SemiBold;
+        padding: 0;
+        font-size: $rts-3;
+        color: #242424;
+    }
+}

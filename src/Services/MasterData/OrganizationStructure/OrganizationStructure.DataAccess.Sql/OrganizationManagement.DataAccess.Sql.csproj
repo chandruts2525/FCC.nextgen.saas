@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Softura.EntityFrameworkCore" Version="2023.12.19.2" />
+    <PackageReference Include="Softura.EntityFrameworkCore.SqlServer" Version="2023.12.19.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkManagement\WorkManagement.Domain\WorkManagement.Domain.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.Domain\OrganizationManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

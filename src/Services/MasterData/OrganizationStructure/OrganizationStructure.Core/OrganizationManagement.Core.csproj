@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Softura.EntityFrameworkCore" Version="2023.11.22.3" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="12.2.0" />
+	</ItemGroup>
+  <ItemGroup>
+	<ProjectReference Include="..\..\..\..\Shared\FCC.Core\FCC.Core.csproj" />
+    <ProjectReference Include="..\..\WorkManagement\WorkManagement.Domain\WorkManagement.Domain.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.Domain\OrganizationManagement.Domain.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.Service\OrganizationManagement.Service.csproj" />
+  </ItemGroup>
+
+</Project>

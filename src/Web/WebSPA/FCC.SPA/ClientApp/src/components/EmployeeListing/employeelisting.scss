@@ -1,0 +1,37 @@
+@import "../../commonStyles.scss";
+
+.employee-listing-container {
+  .top-section {
+    min-height: 32px;
+  }
+  .searchbox {
+    width: 300px;
+    @include mobiledevices {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  .export-dropdown {
+    right: 185px;
+  }
+}
+.Fcc_dataTable.employeelisting_grid
+  .k-grid
+  .k-grid-header-table
+  thead
+  tr
+  th:first-child
+  .k-column-title {
+  text-align: left;
+}
+.Fcc_dataTable.employeelisting_grid
+  .k-grid
+  .k-grid-header-table
+  thead
+  tr
+  th:first-child
+  .k-grid-header-menu.k-grid-column-menu {
+  display: block;
+}

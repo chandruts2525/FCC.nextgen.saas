@@ -1,0 +1,43 @@
+@import '../../../commonStyles.scss';
+
+.ms-ContextualMenu-item .ms-ContextualMenu-link:focus {
+  background: rgb(237, 235, 233);
+}
+
+.context-menu {
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  height: 30px;
+  line-height: 22px;
+  text-align: center;
+  display: block;
+  margin: 1px auto;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.ms-ContextualMenu-Callout {
+  .ms-Callout-main {
+    overflow: hidden;
+
+    .ms-ContextualMenu {
+      min-width: 95px;
+
+      .ms-ContextualMenu-item {
+        button {
+          height: 25px;
+
+          &:hover {
+            background-color: #0a66be;
+            color: #fff;
+          }
+        }
+
+        .ms-ContextualMenu-itemText {
+          font-size: $rts-1;
+        }
+      }
+    }
+  }
+}

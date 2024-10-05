@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\ViewModel\**" />
+    <EmbeddedResource Remove="Handlers\ViewModel\**" />
+    <None Remove="Handlers\ViewModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\FCC.Core\FCC.Core.csproj" />
+    <ProjectReference Include="..\..\WorkManagement\WorkManagement.Domain\WorkManagement.Domain.csproj" />
+    <ProjectReference Include="..\OrganizationStructure.Domain\OrganizationManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,2 @@
+CREATE TYPE [Core].[User]
+	FROM NVARCHAR(100) NULL;

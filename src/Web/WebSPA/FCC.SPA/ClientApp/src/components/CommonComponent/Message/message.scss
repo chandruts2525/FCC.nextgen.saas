@@ -1,0 +1,48 @@
+.alert-msg {
+    &.ms-MessageBar {
+        z-index: 1;
+        position: absolute;
+        top: 48px;
+        right: 6px;
+        max-width: fit-content;
+        padding: 1px 0;
+        border-radius: 4px;
+        border: 1px solid #9FD89F;
+        background: #F1FAF1;
+        color: #000;
+
+        &.ms-MessageBar--warning {
+            z-index: 1;
+            position: absolute;
+            top: 48px;
+            right: 6px;
+            //  max-width: 350px;
+            border: 1px solid #FDCFB4;
+            background: #FFF9F5;
+            color: #000;
+
+            .ms-MessageBar-dismissal {
+                .ms-Button-icon {
+                    color: #000;
+                }
+            }
+        }
+
+        &.ms-MessageBar--error {
+            z-index: 9999;
+            position: absolute;
+            top: 48px;
+            right: 6px;
+            //    max-width: 350px;
+            border: 1px solid #EEACB2;
+            background: #FDF3F4;
+            color: #000;
+
+            .ms-MessageBar-dismissal {
+                .ms-Button-icon {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
